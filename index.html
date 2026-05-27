@@ -114,20 +114,21 @@
 
   /* ABOUT SECTION */
   .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 220px;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     align-items: start;
   }
 
   .about-content h1 {
     font-family: var(--serif);
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--ink);
     margin-bottom: 2rem;
     text-align: left;
+    max-width: 680px;
   }
 
   .masthead-quote {
@@ -319,16 +320,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(247, 244, 239, 0.95);
-    backdrop-filter: blur(8px);
+    background: rgba(26, 25, 23, 0.6);
+    backdrop-filter: blur(4px);
     z-index: 1000;
     display: none;
+    align-items: flex-start;
+    justify-content: center;
     overflow-y: auto;
     padding: 4rem 2.5rem;
   }
 
   .modal-overlay.active {
-    display: block;
+    display: flex;
   }
 
   body.modal-open {
@@ -336,9 +339,13 @@
   }
 
   .modal-content {
+    width: 100%;
     max-width: 720px;
-    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 3rem;
     position: relative;
+    margin: auto;
   }
 
   .modal-close {
@@ -793,10 +800,7 @@
       <div class="about-content">
         <h1>I bring <em>imagination, systems thinking and clarity </em> to the table for <em>direction</em> on what get's built next. </h1>
         <p class="masthead-quote">"When you need someone to push fragmented and vague ideas into strategic direction, digital product visions and shared roadmaps, I guide them from boardrooms to backlogs."</p>
-        <p class="body-text">Twenty-five years across product, strategy and innovation, in companies ranging from early startups to global enterprises. I worked on imagining, strategizing and delivering digital products, platforms and services at Monster, HP, Philips, WPG, NN Group, Rabobank (via Macaw) and Schiphol Airport.</p>
-      </div>
-      <div class="photo-wrap">
-        <div class="photo-placeholder">Photo</div>
+        <p class="body-text">For twenty-five years I've enjoyed working in multidisciplinary teams in start-ups, scale-ups, corporate ventures and global enterprises. From building an entire new digital recruitment category in Europe at Monster to imagining what digital tech for parenting could entail. And from transforming a traditional publishing group to validating adjacent business models for a fintech giant. I worked on imagining, strategizing, designing and delivering digital products, platforms and services at Monster, HP, Philips, WPG, NN Group, Rabobank (via Macaw) and Schiphol Airport.</p>
       </div>
     </div>
   </section>
@@ -1170,7 +1174,8 @@ const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 
 function openModal(caseNum) {
-  const data = cases[caseNum];
+  const key = isNaN(caseNum) ? caseNum : Number(caseNum);
+  const data = cases[key];
   document.getElementById('modalNumber').textContent = data.number;
   document.getElementById('modalTag').textContent = data.tag;
   document.getElementById('modalYear').textContent = data.year;
