@@ -827,10 +827,25 @@
           </div>
         </div>
 
-        <!-- Case 2: RIZE -->
-        <div class="case-card" data-case="2">
+        <!-- Case 2: SCHWUNG -->
+        <div class="case-card" data-case="schwung">
           <div class="case-card-header">
             <span class="case-number">Case II</span>
+            <span class="case-tag">Innovation capability</span>
+          </div>
+          <h3 class="case-card-title">SCHWUNG</h3>
+          <p class="case-card-client">WPG Publishers — Amsterdam</p>
+          <p class="case-card-hook">A traditional publisher needed an innovation engine. Built from nothing — funnel, funding model, strategy and five product teams — in three years.</p>
+          <div class="case-card-footer">
+            <span class="case-year">2017–2020</span>
+            <span class="case-link">Read case →</span>
+          </div>
+        </div>
+
+        <!-- Case 3: RIZE -->
+        <div class="case-card" data-case="2">
+          <div class="case-card-header">
+            <span class="case-number">Case III</span>
             <span class="case-tag">Platform Strategy</span>
           </div>
           <h3 class="case-card-title">RIZE</h3>
@@ -842,10 +857,10 @@
           </div>
         </div>
 
-        <!-- Case 3: YouR -->
+        <!-- Case 4: YouR -->
         <div class="case-card" data-case="3">
           <div class="case-card-header">
-            <span class="case-number">Case III</span>
+            <span class="case-number">Case IV</span>
             <span class="case-tag">Experience Design</span>
           </div>
           <h3 class="case-card-title">YouR</h3>
@@ -857,10 +872,10 @@
           </div>
         </div>
 
-        <!-- Case 4: AirportOS -->
+        <!-- Case 5: AirportOS -->
         <div class="case-card" data-case="4">
           <div class="case-card-header">
-            <span class="case-number">Case IV</span>
+            <span class="case-number">Case V</span>
             <span class="case-tag">Product Strategy</span>
           </div>
           <h3 class="case-card-title">AirportOS</h3>
@@ -872,10 +887,10 @@
           </div>
         </div>
 
-        <!-- Case 5: NN International -->
+        <!-- Case 6: NN International -->
         <div class="case-card" data-case="5">
           <div class="case-card-header">
-            <span class="case-number">Case V</span>
+            <span class="case-number">Case VI</span>
             <span class="case-tag">eHealth Strategy</span>
           </div>
           <h3 class="case-card-title">NN International</h3>
@@ -1088,8 +1103,20 @@ const cases = {
     org: 'Philips Design',
     status: 'Shipped'
   },
-  2: {
+  schwung: {
     number: 'Case II',
+    tag: 'Innovation capability & venture building',
+    year: '2017–2020',
+    title: 'SCHWUNG',
+    subtitle: 'WPG Publishers — Amsterdam',
+    body: '<p>WPG Publishers needed an innovation capability — not a project, but a permanent engine. I built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model, structured around a 4-D strategy — Direct to consumer, Data Driven, Digital, Device independent.</p><p>150 ideas ran through the funnel over three years. The ones that survived validation launched: Coachfinder, Spiek!, ThrillerAbo, Thrillseeker, Kinderboeken.nl. Alongside the launches, SCHWUNG embedded new practices across the organisation — continuous improvement, data-driven journalism — and built five product teams organised around consumer need spaces: Education, Stories, Mindstyle, Magazines and Kids.</p>',
+    outcome: 'Multiple products launched and generating revenue. New ways of working embedded across the organisation. The innovation capability outlasted the programmes it spawned.',
+    role: 'Head of Innovation, MT member',
+    org: 'WPG Publishers',
+    status: 'Running'
+  },
+  2: {
+    number: 'Case III',
     tag: 'Platform strategy & innovation portfolio',
     year: '2017–2020',
     title: 'RIZE',
@@ -1101,7 +1128,7 @@ const cases = {
     status: 'Concept — not funded'
   },
   3: {
-    number: 'Case III',
+    number: 'Case IV',
     tag: 'Product concept & experience design',
     year: '2023–2024',
     title: 'YouR',
@@ -1113,7 +1140,7 @@ const cases = {
     status: 'Blueprint — not implemented'
   },
   4: {
-    number: 'Case IV',
+    number: 'Case V',
     tag: 'Organisational vision & product strategy',
     year: '2024–2026',
     title: 'AirportOS',
@@ -1125,7 +1152,7 @@ const cases = {
     status: 'Blueprint handed over'
   },
   5: {
-    number: 'Case V',
+    number: 'Case VI',
     tag: 'Corporate venture & eHealth strategy',
     year: '2021–2022',
     title: 'NN International',
@@ -1149,7 +1176,7 @@ function openModal(caseNum) {
   document.getElementById('modalYear').textContent = data.year;
   document.getElementById('modalTitle').textContent = data.title;
   document.getElementById('modalSubtitle').textContent = data.subtitle;
-  document.getElementById('modalBody').textContent = data.body;
+  document.getElementById('modalBody').innerHTML = data.body;
   document.getElementById('modalOutcome').textContent = data.outcome;
   document.getElementById('modalRole').textContent = data.role;
   document.getElementById('modalOrg').textContent = data.org;
