@@ -20,7 +20,8 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
+      height: 70vh;
+      max-height: 600px;
       display: flex;
       position: relative;
       overflow: hidden;
@@ -31,9 +32,9 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 5rem 4rem;
-      max-width: 55%;
+      justify-content: flex-end;
+      padding: 3rem 4rem;
+      max-width: 60%;
       z-index: 2;
     }
 
@@ -121,7 +122,9 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.7) 30%, transparent 60%);
+      background:
+        linear-gradient(to right, #000 0%, rgba(0,0,0,0.75) 35%, transparent 65%),
+        linear-gradient(to top, #000 0%, transparent 30%);
       z-index: 1;
     }
 
@@ -274,31 +277,18 @@
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       .hero {
-        flex-direction: column;
-        min-height: auto;
-      }
-
-      .hero-image {
-        position: relative;
-        width: 100%;
-        height: 50vh;
-      }
-
-      .hero-image::before {
-        background: linear-gradient(to bottom, transparent 50%, #000 100%);
-      }
-
-      .hero-image::after {
-        display: none;
+        height: 60vw;
+        max-height: 420px;
       }
 
       .hero-content {
         max-width: 100%;
-        padding: 2rem 1.5rem 3rem;
+        padding: 1.5rem;
+        justify-content: flex-end;
       }
 
       .masthead {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .carousel-header {
