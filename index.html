@@ -379,26 +379,58 @@
       margin-bottom: 2rem;
     }
 
-    .testimonial-item {
-      margin-bottom: 2rem;
+    .testimonial-carousel {
+      position: relative;
+      overflow: hidden;
     }
 
-    .testimonial-item:last-child {
-      margin-bottom: 0;
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .testimonial-item {
+      flex: 0 0 100%;
+      min-width: 100%;
     }
 
     .testimonial-quote {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-style: italic;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.75rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1rem;
     }
 
     .testimonial-author {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.5);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .testimonial-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .testimonial-dot.active {
+      background: #fff;
+    }
+
+    .testimonial-dot:hover {
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .contact-section {
@@ -592,6 +624,14 @@
 
       <div class="carousel-track" id="carouselTrack">
         <article class="project-card" data-case="1">
+          <img src="logos/philips-avent.jpg" alt="Philips Avent" class="card-logo">
+          <h3 class="card-title">uGrow</h3>
+          <p class="card-client">Philips Avent</p>
+          <p class="card-body">A hardware-first baby brand with no platform. Built a connected parenting vision from scratch — app, baby monitor, smart thermometer.</p>
+          <span class="card-year">2015 – 2017</span>
+        </article>
+
+        <article class="project-card" data-case="2">
           <img src="logos/schiphol.png" alt="AMS Schiphol" class="card-logo">
           <h3 class="card-title">AirportOS</h3>
           <p class="card-client">Amsterdam Airport Schiphol</p>
@@ -599,7 +639,7 @@
           <span class="card-year">2024 – 2026</span>
         </article>
 
-        <article class="project-card" data-case="2">
+        <article class="project-card" data-case="3">
           <img src="logos/nn-group.jpg" alt="NN Group" class="card-logo">
           <h3 class="card-title">NN International</h3>
           <p class="card-client">NN Group</p>
@@ -607,7 +647,7 @@
           <span class="card-year">2021 – 2022</span>
         </article>
 
-        <article class="project-card" data-case="3">
+        <article class="project-card" data-case="4">
           <img src="logos/schwung.png" alt="SCHWUNG" class="card-logo">
           <h3 class="card-title">SCHWUNG</h3>
           <p class="card-client">WPG Uitgevers</p>
@@ -615,7 +655,7 @@
           <span class="card-year">2017 – 2020</span>
         </article>
 
-        <article class="project-card" data-case="4">
+        <article class="project-card" data-case="5">
           <img src="logos/your.png" alt="YouR" class="card-logo">
           <h3 class="card-title">YouR</h3>
           <p class="card-client">Rabobank via Macaw</p>
@@ -623,7 +663,7 @@
           <span class="card-year">2023 – 2024</span>
         </article>
 
-        <article class="project-card" data-case="5">
+        <article class="project-card" data-case="6">
           <img src="logos/rize.png" alt="RIZE" class="card-logo">
           <h3 class="card-title">RIZE</h3>
           <p class="card-client">WPG Uitgevers</p>
@@ -637,13 +677,26 @@
   <div class="testimonials-section">
     <div class="testimonials-box">
       <h2 class="testimonials-heading">What people say about working with me</h2>
-      <div class="testimonial-item">
-        <p class="testimonial-quote">"Laurens has the rare ability to see through complexity and turn abstract ideas into actionable strategies. His work on our innovation funnel transformed how we operate."</p>
-        <p class="testimonial-author">— Former colleague, WPG Publishers</p>
-      </div>
-      <div class="testimonial-item">
-        <p class="testimonial-quote">"A strategic mind with hands-on pragmatism. Laurens bridges the gap between vision and execution like few others."</p>
-        <p class="testimonial-author">— Project stakeholder, Schiphol</p>
+      <div class="testimonial-carousel">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-item">
+            <p class="testimonial-quote">"Laurens has the rare ability to see through complexity and turn abstract ideas into actionable strategies. His work on our innovation funnel transformed how we operate."</p>
+            <p class="testimonial-author">— Former colleague, WPG Publishers</p>
+          </div>
+          <div class="testimonial-item">
+            <p class="testimonial-quote">"A strategic mind with hands-on pragmatism. Laurens bridges the gap between vision and execution like few others."</p>
+            <p class="testimonial-author">— Project stakeholder, Schiphol</p>
+          </div>
+          <div class="testimonial-item">
+            <p class="testimonial-quote">"Laurens brings clarity where others see chaos. His ability to align teams around a shared vision while keeping execution on track is exceptional."</p>
+            <p class="testimonial-author">— Programme lead, NN Group</p>
+          </div>
+        </div>
+        <div class="testimonial-dots" id="testimonialDots">
+          <button class="testimonial-dot active" data-index="0"></button>
+          <button class="testimonial-dot" data-index="1"></button>
+          <button class="testimonial-dot" data-index="2"></button>
+        </div>
       </div>
     </div>
   </div>
@@ -764,6 +817,16 @@
 
     const cases = {
       1: {
+        logo: 'logos/philips-avent.jpg',
+        title: 'uGrow',
+        client: 'Philips Avent — Amsterdam & Bangalore',
+        body: 'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design across a cross-functional discovery and delivery programme, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve.',
+        outcome: 'First medically certified smart parenting platform in the US and EU. CES Innovation Award, iF Design Award, Red Dot Award.',
+        role: 'Experience design lead',
+        year: '2015 – 2017',
+        status: 'Shipped'
+      },
+      2: {
         logo: 'logos/schiphol.png',
         title: 'AirportOS',
         client: 'Amsterdam Airport Schiphol',
@@ -773,7 +836,7 @@
         year: '2024 – 2026',
         status: 'Blueprint handed over'
       },
-      2: {
+      3: {
         logo: 'logos/nn-group.jpg',
         title: 'NN International',
         client: 'NN Group — Amsterdam',
@@ -783,7 +846,7 @@
         year: '2021 – 2022',
         status: 'Ventured'
       },
-      3: {
+      4: {
         logo: 'logos/schwung.png',
         title: 'SCHWUNG',
         client: 'WPG Publishers — Amsterdam',
@@ -793,7 +856,7 @@
         year: '2017 – 2020',
         status: 'Running'
       },
-      4: {
+      5: {
         logo: 'logos/your.png',
         title: 'YouR',
         client: 'Rabobank — via Macaw, Amsterdam',
@@ -803,7 +866,7 @@
         year: '2023 – 2024',
         status: 'Blueprint — not implemented'
       },
-      5: {
+      6: {
         logo: 'logos/rize.png',
         title: 'RIZE',
         client: 'WPG Publishers — Amsterdam',
@@ -850,6 +913,31 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
+
+    // Testimonial carousel
+    const testimonialTrack = document.getElementById('testimonialTrack');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+      currentTestimonial = index;
+      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+      testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    testimonialDots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        showTestimonial(parseInt(dot.dataset.index));
+      });
+    });
+
+    // Auto-advance testimonials every 6 seconds
+    setInterval(() => {
+      const nextIndex = (currentTestimonial + 1) % testimonialDots.length;
+      showTestimonial(nextIndex);
+    }, 6000);
   </script>
 </body>
 </html>
