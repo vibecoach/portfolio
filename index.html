@@ -4,806 +4,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laurens Massee &#8226; Product / Transformation / Innovation / Strategy</title>
+  <title>Laurens Massee — Product, Innovation, Tranformation, Strategic pragmatist</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap"
     rel="stylesheet">
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
-    }
-
-    :root {
-      --ink: #1a1917;
-      --ink-mid: #4a4845;
-      --ink-faint: #9a9690;
-      --paper: #f7f4ef;
-      --paper-warm: #ede9e1;
-      --accent: #c85a2a;
-      --rule: rgba(26, 25, 23, 0.12);
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
+      box-sizing: border-box;
     }
 
     html {
-      font-size: 16px;
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: var(--sans);
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 15% 40%, #6cb4f8 0%, #2253b0 30%, transparent 65%),
+        radial-gradient(ellipse at 60% 0%, #5aa0f0 0%, transparent 50%),
+        #08163b;
+      color: #fff;
     }
 
-    /* NAVIGATION */
-    .site-nav {
-      position: sticky;
-      top: 0;
-      height: 52px;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
-      z-index: 100;
-      padding: 0 2.5rem;
+    /* ── Blended portrait ── */
+    .hero-portrait {
+      position: absolute;
+      inset: 0;
+      height: 70vh;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.18;
+      z-index: 0;
     }
 
-    .site-nav-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+    .hero-portrait img {
+      width: 100%;
       height: 100%;
-      gap: 4rem;
+      object-fit: cover;
+      object-position: center top;
     }
 
-    .nav-name {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-name:hover {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--ink-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* PAGE CONTAINER */
-    .page {
-      max-width: 860px;
+    /* ── Content container ── */
+    .content {
+      position: relative;
+      z-index: 10;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 2.5rem;
+      padding: 6rem 3rem 5rem;
     }
 
-    /* SECTIONS */
-    section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--rule);
+    /* ── Headline ── */
+    .headline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.9rem, 5.1vw, 4.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: #fff;
+      max-width: 16ch;
+      text-wrap: balance;
+      margin-bottom: 2.5rem;
     }
 
-    section:last-of-type {
-      border-bottom: none;
+    .headline em {
+      font-style: italic;
+      color: #6cb4f8;
     }
 
-    .eyebrow {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: block;
-      text-align: left;
-    }
-
-    /* ABOUT SECTION */
-    .about-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .about-content h1 {
-      font-family: var(--serif);
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    /* ── Body copy ── */
+    .body-copy {
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
       font-weight: 400;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 2rem;
-      text-align: left;
-      max-width: 680px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 58ch;
+      margin-bottom: 3rem;
     }
 
-    .masthead-quote {
-      font-family: var(--serif);
-      font-size: 1.2em;
-      font-style: italic;
-      color: var(--ink);
+    /* ── CTA Button ── */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: #0a0a0c;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .cta-button svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 3rem 0 2rem;
+    }
+
+    /* ── Section heading ── */
+    .section-heading {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #fff;
       margin-bottom: 1.5rem;
-      line-height: 1.6;
     }
 
-    .about-content h1 em {
-      font-style: italic;
-      color: var(--accent);
+    /* ── Projects section ── */
+    .projects-section {
+      padding: 4rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 20;
     }
 
-    .about-content .body-text {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      line-height: 1.8;
-      text-align: left;
-    }
-
-    .photo-wrap {
+    /* ── Carousel container ── */
+    .carousel-wrapper {
       position: relative;
     }
 
-    .photo-wrap img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
+    .carousel-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
     }
 
-    .photo-placeholder {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--paper-warm);
-      border: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink-faint);
-      font-size: 0.85rem;
-    }
-
-  .inline-profile-image {
-    width: 110px;
-    height: 150px;
-    object-fit: cover;
-    margin: 0 1.5rem 1rem 0;
-    float: left;
-    border-radius: 8px;
-  }
-
-  .body-list {
-    list-style: disc;
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    color: var(--ink-mid);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.8;
-  }
-
-  .body-list li {
-    margin-bottom: 0.5rem;
-  }
-
-    /* CASES SECTION */
-    .carousel-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .carousel-arrow {
-      width: 2.25rem;
-      height: 2.25rem;
-      border: 1px solid var(--rule);
-      background: var(--paper);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
       cursor: pointer;
-      flex-shrink: 0;
-      transition: border-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
     }
 
-    .carousel-arrow:hover:not(:disabled) {
-      border-color: var(--accent);
+    .carousel-btn:hover {
+      border-color: #fff;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    .carousel-arrow:disabled {
+    .carousel-btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
     }
 
-    .carousel-arrow svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--ink);
+    .carousel-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
     }
 
+    /* ── Carousel track ── */
     .carousel-track {
       display: flex;
       gap: 1.5rem;
       overflow-x: auto;
       scroll-behavior: smooth;
+      padding-bottom: 1rem;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      cursor: grab;
-      padding: 0.5rem 0;
     }
 
     .carousel-track::-webkit-scrollbar {
       display: none;
     }
 
-    .carousel-track.dragging {
-      cursor: grabbing;
-      scroll-behavior: auto;
-    }
-
-    .case-card {
-      flex-shrink: 0;
-      width: 290px;
-      background: var(--paper-warm);
-      border: 1px solid var(--rule);
-      padding: 2rem;
+    /* ── Project cards (white, rounded) ── */
+    .project-card {
+      flex: 0 0 320px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
       cursor: pointer;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .case-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
 
-    .case-card-header {
+    .card-logo {
+      height: 48px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .card-logo-placeholder {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: #fff;
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1rem;
-    }
-
-    .case-number {
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--accent);
-      font-size: 0.9rem;
-    }
-
-    .case-tag {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-
-    .case-card-title {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .case-card-client {
-      font-style: italic;
-      font-size: 0.85rem;
-      color: var(--ink-faint);
-      margin-bottom: 1rem;
-    }
-
-    .case-card-hook {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .case-card-footer {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--rule);
-      padding-top: 1rem;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
     }
 
-    .case-year {
-      font-size: 0.8rem;
-      color: var(--ink-faint);
-    }
-
-    .case-link {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent);
-    }
-
-    /* MODAL */
+    /* ── Modal Overlay ── */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(26, 25, 23, 0.6);
-      backdrop-filter: blur(4px);
+      inset: 0;
+      background: rgba(8, 22, 59, 0.9);
+      backdrop-filter: blur(8px);
       z-index: 1000;
       display: none;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      overflow-y: auto;
-      padding: 4rem 2.5rem;
+      padding: 2rem;
     }
 
     .modal-overlay.active {
       display: flex;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
-
     .modal-content {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 640px;
       width: 100%;
-      max-width: 720px;
-      background: var(--paper);
-      border: 1px solid var(--rule);
-      padding: 3rem;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.5rem;
       position: relative;
-      margin: auto;
     }
 
     .modal-close {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      border: 1px solid var(--rule);
-      background: var(--paper);
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: #f0f0f0;
+      border-radius: 50%;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: var(--ink);
-      transition: border-color 0.2s;
+      transition: background 0.2s;
     }
 
     .modal-close:hover {
-      border-color: var(--accent);
+      background: #e0e0e0;
     }
 
-    .modal-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.5rem;
-      padding-right: 3.5rem;
-    }
-
-    .modal-meta-left {
-      display: flex;
-      gap: 1.5rem;
-      align-items: baseline;
+    .modal-close svg {
+      width: 20px;
+      height: 20px;
+      stroke: #333;
+      stroke-width: 2;
     }
 
     .modal-number {
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--accent);
-      font-size: 1rem;
-    }
-
-    .modal-tag {
-      font-size: 0.7rem;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #3b82f6;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-
-    .modal-year {
-      font-size: 0.85rem;
-      color: var(--ink-faint);
+      margin-bottom: 1.5rem;
     }
 
     .modal-title {
-      font-family: var(--serif);
-      font-size: 2.5rem;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
       font-weight: 400;
-      color: var(--ink);
+      color: #0a0a0c;
+      line-height: 1.2;
       margin-bottom: 0.5rem;
-      line-height: 1.15;
     }
 
-    .modal-subtitle {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 2rem;
+    .modal-client {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #3b82f6;
+      margin-bottom: 1.5rem;
     }
 
     .modal-body {
       font-size: 1rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      line-height: 1.8;
-      max-width: 680px;
-      margin-bottom: 2.5rem;
-    }
-
-    .outcome-block {
-      background: var(--paper-warm);
-      border-left: 3px solid var(--accent);
-      padding: 1.5rem 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .outcome-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .outcome-text {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
+      font-weight: 400;
       line-height: 1.7;
+      color: rgba(10, 10, 12, 0.75);
+      margin-bottom: 1.5rem;
     }
 
-    .role-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .modal-outcome-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(10, 10, 12, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-outcome {
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(10, 10, 12, 0.65);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-meta {
+      display: flex;
       gap: 2rem;
-      border-top: 1px solid var(--rule);
-      padding-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
     }
 
-    .role-item-label {
+    .modal-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .modal-meta-label {
       font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(10, 10, 12, 0.4);
+    }
+
+    .modal-meta-value {
+      font-size: 0.9rem;
       font-weight: 500;
+      color: #0a0a0c;
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #3b82f6;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 0.25rem;
     }
 
-    .role-item-value {
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-
-    /* SIDE HUSTLES */
-    .section-heading {
-      font-family: var(--serif);
-      font-size: 2rem;
+    .card-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.35rem;
       font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
+      color: #0a0a0c;
       line-height: 1.2;
-      text-align: left;
     }
 
-    .section-heading em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .section-intro {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-      text-align: left;
-    }
-
-    .hustles-list {
-      border-top: 1px solid var(--rule);
-    }
-
-    .hustle-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .hustle-name {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      color: var(--ink);
-    }
-
-    .hustle-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      margin-top: 0.5rem;
-      border-radius: 2px;
-    }
-
-    .badge-live {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .badge-agentic {
-      background: #e8daef;
-      color: #5b2c6f;
-    }
-
-    .badge-tools {
-      background: #fdebd0;
-      color: #9a6700;
-    }
-
-    .badge-productivity {
-      background: #d6eaf8;
-      color: #1b4f72;
-    }
-
-    .hustle-desc {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      line-height: 1.6;
-    }
-
-    .hustle-desc a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .hustle-desc a:hover {
-      text-decoration: underline;
-    }
-
-    .hustles-footer {
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--ink-faint);
-      margin-top: 2rem;
-    }
-
-    /* EXPERIENCE */
-    .experience-list {
-      border-top: 1px solid var(--rule);
-    }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 2rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .exp-company {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--accent);
-    }
-
-    .exp-period {
-      font-size: 0.75rem;
-      color: var(--ink-faint);
-      margin-top: 0.25rem;
-    }
-
-    .exp-desc {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
-    .footer-section {
-      padding: 4rem 0 5rem;
-    }
-
-    .footer-ornament {
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--accent);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer-heading {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .footer-intro {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .footer-list li {
-      display: flex;
-      gap: 0.75rem;
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-    }
-
-    .footer-list li::before {
-      content: '—';
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .footer-closing {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--ink-mid);
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    .contact-form {
-      display: flex;
-      gap: 1rem;
-      max-width: 400px;
-    }
-
-    .contact-input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--rule);
-      background: var(--paper);
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-
-    .contact-input::placeholder {
-      color: var(--ink-faint);
-    }
-
-    .contact-input:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-
-    .contact-btn {
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: white;
-      border: none;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .contact-btn:hover {
-      opacity: 0.9;
-    }
-
-    .contact-confirmation {
-      margin-top: 1rem;
+    .card-client {
       font-size: 0.85rem;
-      color: var(--accent);
-      display: none;
+      font-weight: 500;
+      color: #3b82f6;
+      margin-top: -0.5rem;
     }
 
-    .contact-confirmation.show {
-      display: block;
+    .card-body {
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(10, 10, 12, 0.65);
     }
 
-    /* MOBILE STYLES */
+    .card-year {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(10, 10, 12, 0.4);
+      margin-top: auto;
+    }
+
+    /* ── Fade edge ── */
+    .carousel-fade {
+      position: absolute;
+      right: 0;
+      top: 56px;
+      bottom: 0;
+      width: 80px;
+      background: linear-gradient(to left, #0a0a0c 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* ── Mobile ── */
     @media (max-width: 768px) {
-      .site-nav {
-        padding: 0 1.25rem;
+      .content {
+        padding: 4rem 1.5rem 3rem;
       }
 
-      .nav-links {
-        gap: 1rem;
+      .hero-portrait {
+        height: 50vh;
+        opacity: 0.12;
       }
 
-      .nav-links a {
-        font-size: 0.75rem;
+      .headline {
+        font-size: 2rem;
+        max-width: 100%;
       }
 
-      .page {
-        padding: 0 1.25rem;
+      .carousel-nav {
+        justify-content: flex-start;
       }
 
-      section {
-        padding: 3rem 0;
+      .project-card {
+        flex: 0 0 280px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .photo-wrap {
-        max-width: 180px;
-        order: -1;
-      }
-
-      .hustle-item,
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-
-      .role-strip {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .carousel-arrow {
+      .carousel-fade {
         display: none;
-      }
-
-      .carousel-container {
-        gap: 0;
-      }
-
-      .case-card {
-        width: 260px;
-      }
-
-      .contact-form {
-        flex-direction: column;
       }
     }
   </style>
@@ -811,538 +470,263 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="#about" class="nav-name">Laurens Massee</a>
-      <div class="nav-links">
-        <a href="#about">About Me</a>
-        <a href="#cases">Cases</a>
-        <a href="#sidehustles">Playground</a>
-        <a href="#experience">Experience</a>
-        <a href="#lets-talk">Let's Talk</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Blended portrait background -->
+  <div class="hero-portrait" aria-hidden="true">
+    <img src="hero-bg.jpg" alt="">
+  </div>
 
-  <div class="page">
+  <!-- Content -->
+  <div class="content">
 
-    <!-- ABOUT ME -->
-    <section id="about">
-      <span class="eyebrow">About Me</span>
-      <div class="about-grid">
-        <div class="about-content">
-          <h1>Helping organizations <em>articulate future direction</em> and connect it to execution. </h1>
-          <p class="masthead-quote">By combining imagination with clarity and questioning the status quo I sharpen ideas from boardrooms to backlogs.</p>
-          <p class="body-text"><img src="profile.jpg" alt="Laurens Massee" class="inline-profile-image">I help organizations turn fragmented ideas into clear product and strategic direction, future-state visions and executable roadmaps. My work bridges business, design and tech, especially where change is needed but the way forward is still unclear.
-Over the past 25 years I've worked across startups, scale-ups and enterprise organizations on digital products, platforms and transformation initiatives for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.
-<br> <br>Let's talk if you need help shaping direction or solve challenges like:</p>
-          <ul class="body-list">
-            <li>Everyone has a different answer when you ask what we're building and why</li>
-            <li>The roadmap has 40 priorities and somehow they're all urgent</li>
-            <li>You've been in discovery for months and still can't agree on direction</li>
-            <li>Multiple teams are building things in isolation, deviating from the bigger picture</li>
-            <li>Leadership approved the strategy but nobody knows what to do on Monday</li>
-            <li>Your management team struggles to clearly articulate the desired future-state</li>
-            <li>You need to turn fragmentary situations into a cohesive ecosystem</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- Headline -->
+    <h1 class="headline">
+      Helping organizations evaluate &amp; articulate possible futures.<br>
+    </h1>
 
-    <!-- CASES -->
-    <section id="cases">
-      <span class="eyebrow">Cases</span>
-      <div class="carousel-container">
-        <button class="carousel-arrow arrow-left" aria-label="Previous">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 9 12 15 6"></polyline>
+    <!-- Body copy -->
+    <p class="body-copy">
+      I help organizations turn fragmented ideas into clear product and strategic direction, future-state visions and
+      executable roadmaps. My work bridges business, design and tech, especially where change is needed but the way
+      forward is still unclear. Over the past 25 years I've worked across startups, scale-ups and enterprise
+      organizations on digital products, platforms and transformation initiatives for companies including Philips,
+      Rabobank, NN Group, Schiphol Airport, Monster and HP.
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#cases" class="cta-button">
+      Get in touch
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Featured Projects Section -->
+  <div class="projects-section">
+    <!-- Section heading -->
+    <h2 class="section-heading">Featured projects</h2>
+    <!-- Carousel -->
+    <div class="carousel-wrapper" id="cases">
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
-        <div class="carousel-track">
+        <button class="carousel-btn" id="nextBtn" aria-label="Next">
+          <svg viewBox="0 0 24 24">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </button>
+      </div>
 
-          <!-- Case 1: uGrow -->
-          <div class="case-card" data-case="1">
-            <div class="case-card-header">
-              <span class="case-number">Case I</span>
-              <span class="case-tag">Product Vision</span>
-            </div>
-            <h3 class="case-card-title">uGrow</h3>
-            <p class="case-card-client">Philips Avent</p>
-            <p class="case-card-hook">A hardware-first baby brand with no platform and no relationship beyond the sale.
-              How do you build one from scratch?</p>
-            <div class="case-card-footer">
-              <span class="case-year">2015–2017</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+      <div class="carousel-track" id="carouselTrack">
 
-          <!-- Case 2: SCHWUNG -->
-          <div class="case-card" data-case="schwung">
-            <div class="case-card-header">
-              <span class="case-number">Case II</span>
-              <span class="case-tag">Innovation capability</span>
-            </div>
-            <h3 class="case-card-title">SCHWUNG</h3>
-            <p class="case-card-client">WPG Uitgevers</p>
-            <p class="case-card-hook">A traditional publisher needed an innovation engine. From mindset, skillset and
-              toolset, to five product teams, 150+ ideas funneled, 6 launches.</p>
-            <div class="case-card-footer">
-              <span class="case-year">2017–2020</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+        <article class="project-card">
+          <img src="logos/philips-avent.jpg" alt="Philips Avent" class="card-logo">
+          <h3 class="card-title">uGrow</h3>
+          <p class="card-client">Philips Avent</p>
+          <p class="card-body">A hardware-first baby brand with no platform. Built a connected parenting vision from
+            scratch — app, baby monitor, smart thermometer.</p>
+          <span class="card-year">2015 – 2017</span>
+        </article>
 
-          <!-- Case 3: RIZE -->
-          <div class="case-card" data-case="2">
-            <div class="case-card-header">
-              <span class="case-number">Case III</span>
-              <span class="case-tag">Platform Strategy</span>
-            </div>
-            <h3 class="case-card-title">RIZE</h3>
-            <p class="case-card-client">WPG Uitgevers</p>
-            <p class="case-card-hook">Trusted magazine brands bleeding subscribers with no digital future. Sunset or
-              sunrise?</p>
-            <div class="case-card-footer">
-              <span class="case-year">2017–2020</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+        <article class="project-card">
+          <img src="logos/schwung.png" alt="SCHWUNG" class="card-logo">
+          <h3 class="card-title">SCHWUNG</h3>
+          <p class="card-client">WPG Uitgevers</p>
+          <p class="card-body">A traditional publisher needed an innovation engine. Built from nothing — strategy,
+            innovation funnel, funding model, and five product teams.</p>
+          <span class="card-year">2017 – 2020</span>
+        </article>
 
-          <!-- Case 4: YouR -->
-          <div class="case-card" data-case="3">
-            <div class="case-card-header">
-              <span class="case-number">Case IV</span>
-              <span class="case-tag">Experience Design</span>
-            </div>
-            <h3 class="case-card-title">YouR</h3>
-            <p class="case-card-client">Rabobank via Macaw</p>
-            <p class="case-card-hook">50,000 employees, no coherent digital workplace. Every task meant a different legacy tool. Imagine a better future digital point of interaction for HR and IT.</p>
-            <div class="case-card-footer">
-              <span class="case-year">2023–2024</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+        <article class="project-card">
+          <img src="logos/rize.png" alt="RIZE" class="card-logo">
+          <h3 class="card-title">RIZE</h3>
+          <p class="card-client">WPG Uitgevers</p>
+          <p class="card-body">Trusted magazine brands bleeding subscribers with no digital future. Sunset or
+              sunrise?.</p>
+          <span class="card-year">2017 – 2020</span>
+        </article>
 
-          <!-- Case 5: AirportOS -->
-          <div class="case-card" data-case="4">
-            <div class="case-card-header">
-              <span class="case-number">Case V</span>
-              <span class="case-tag">Product Strategy</span>
-            </div>
-            <h3 class="case-card-title">AirportOS</h3>
-            <p class="case-card-client">Amsterdam Airport Schiphol</p>
-            <p class="case-card-hook">An airport at capacity limits, two departments without alignment, and no
+        <article class="project-card">
+          <img src="logos/your.png" alt="YouR" class="card-logo">
+          <h3 class="card-title">YouR</h3>
+          <p class="card-client">Rabobank via Macaw</p>
+          <p class="card-body">50,000 employees, no coherent digital workplace. Every task meant a different legacy tool. Imagine a better future digital point of interaction for HR and IT.</p>
+          <span class="card-year">2023 – 2024</span>
+        </article>
+
+        <article class="project-card">
+          <img src="logos/schiphol.png" alt="AMS Schiphol" class="card-logo">
+          <h3 class="card-title">AirportOS</h3>
+          <p class="card-client">Amsterdam Airport Schiphol</p>
+          <p class="card-body">An airport at capacity limits, two departments without alignment, and no
               intelligent platform to run on. Design & plan the change without disturbing the run.</p>
-            <div class="case-card-footer">
-              <span class="case-year">2024–2026</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+          <span class="card-year">2024 – 2026</span>
+        </article>
 
-          <!-- Case 6: NN International -->
-          <div class="case-card" data-case="5">
-            <div class="case-card-header">
-              <span class="case-number">Case VI</span>
-              <span class="case-tag">eHealth Strategy</span>
-            </div>
-            <h3 class="case-card-title">NN International</h3>
-            <p class="case-card-client">NN Group</p>
-            <p class="case-card-hook">Deep customer trust in health and finance. Could that open new territory in
-              eHealth and family care?</p>
-            <div class="case-card-footer">
-              <span class="case-year">2021–2022</span>
-              <span class="case-link">Read case →</span>
-            </div>
-          </div>
+        <article class="project-card">
+          <img src="logos/nn-group.jpg" alt="NN Group" class="card-logo">
+          <h3 class="card-title">NN International</h3>
+          <p class="card-client">NN Group</p>
+          <p class="card-body">Deep customer trust in health and finance. Could that open new territory in
+              eHealth and Family care?</p>
+          <span class="card-year">2021 – 2022</span>
+        </article>
 
-        </div>
-        <button class="carousel-arrow arrow-right" aria-label="Next">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- SIDE HUSTLES -->
-    <section id="sidehustles">
-      <span class="eyebrow">Side Hustle Playground</span>
-      <h2 class="section-heading">Staying sharp<br>by <em>building things.</em></h2>
-      <p class="section-intro">The best way to stay current with technology is to use it on things that matter to you.
-        These projects are not client work. They are a personal laboratory: part curiosity, part vibecoding.</p>
-
-      <div class="hustles-list">
-        <div class="hustle-item">
-          <div>
-            <div class="hustle-name">Re:viewer</div>
-            <span class="hustle-badge badge-live">Beta</span>
-          </div>
-          <p class="hustle-desc">Vibecoaching platform that matches builders with expert reviewers. Keeping human judgement and taste in the loop. <a href="https://vibecoders.review"
-              target="_blank">vibecoders.review</a></p>
-        </div>
-        <div class="hustle-item">
-          <div>
-            <div class="hustle-name">Modulair</div>
-            <span class="hustle-badge badge-agentic">Agentic AI</span>
-          </div>
-          <p class="hustle-desc">An agentic risk negotiator for airports. AI-assisted negotiation between stakeholders
-            around capacity constraints. <a href="https://modulair.app"
-              target="_blank">modulair.app</a></p></p>
-        </div>
-        <div class="hustle-item">
-          <div>
-            <div class="hustle-name">Re:framer</div>
-            <span class="hustle-badge badge-tools">Strategy Tools</span>
-          </div>
-          <p class="hustle-desc">An interactive thinking hats and reframing tool. Helps teams shift perspective using
-            proven lateral thinking frameworks.</p>
-        </div>
-        <div class="hustle-item">
-          <div>
-            <div class="hustle-name">Re:minder</div>
-            <span class="hustle-badge badge-productivity">Planning tools</span>
-          </div>
-          <p class="hustle-desc">An event countdown and impact analyser. Makes the time before a deadline actionable —
-            surfacing what needs to happen and what the stakes are.</p>
-        </div>
-        <div class="hustle-item">
-          <div>
-            <div class="hustle-name">Off-site On-track</div>
-            <span class="hustle-badge badge-tools">Facilitation Tools</span>
-          </div>
-          <p class="hustle-desc">Prevents offsite sessions from derailing. Bridges the gap between the energy of an
-            offsite and the reality of Monday morning.</p>
-        </div>
       </div>
 
-      <p class="hustles-footer">These projects are works in progress. If any of them resonate with a problem you are
-        sitting with, I am happy to talk.</p>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <span class="eyebrow">Experience</span>
-
-      <div class="experience-list">
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">schiphol</div>
-            <div class="exp-period">2024–2026</div>
-          </div>
-          <p class="exp-desc">Shaped the shared 2030 direction, operating model and roadmap for Airport Capacity
-            Planning & Control (ACPC), Airport Operations Plan (AOP) and drove an aligned technology vision (AirportOS)
-            with IT & Data teams.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">macaw</div>
-            <div class="exp-period">2023–2024</div>
-          </div>
-          <p class="exp-desc">Led future vision discovery and prototyping of an AI first employee engagement platform
-            for Rabobank and intranet design strategy & redesign for Heineken.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">nn group</div>
-            <div class="exp-period">2021–2022</div>
-          </div>
-          <p class="exp-desc">Innovated and trialed new business ideas from within corporate ventures in ehealth for NN
-            International leading multidisciplinary teams spanning marketing, (service) design and IT.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">wellbe</div>
-            <div class="exp-period">2020–2021</div>
-          </div>
-          <p class="exp-desc">Early-stage proposition development to make mental care accessible to more people.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">wpg publishers</div>
-            <div class="exp-period">2017–2020</div>
-          </div>
-          <p class="exp-desc">As Head of Innovation I had the chance to build the innovation capability SCHWUNG from
-            scratch for Dutch publishing company WPG. This innovation hub drove 150+ ideas through a lean innovation
-            funnel and launched various new propositions.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">philips design</div>
-            <div class="exp-period">2008–2017</div>
-          </div>
-          <p class="exp-desc">UX / Service design lead on digital propositions in personal health space. Delivered
-            lifeline elderly care, wakeup light iOS app and award winning smart parenting platform uGrow.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">hp</div>
-            <div class="exp-period">2003–2008</div>
-          </div>
-          <p class="exp-desc">Managed 7 country B2C web teams across Northern Europe to drive online growth for
-            printers, ink and cameras.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">blinque</div>
-            <div class="exp-period">2001–2003</div>
-          </div>
-          <p class="exp-desc">Co-founded a web and search optimization consultancy to boost full funnel results for
-            clients.</p>
-        </div>
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">monster.com</div>
-            <div class="exp-period">1999–2003</div>
-          </div>
-          <p class="exp-desc">Launched Monsterboard.nl from Amsterdam with a team of 4, managed the site and after that rolled out Monster sites
-            across Europe from the London EU HQ.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <section id="lets-talk" class="footer-section">
-      <div class="footer-ornament">—</div>
-      <h2 class="footer-heading">Let's talk.</h2>
-      <p class="footer-intro">I'm available to help in situations like these:</p>
-
-      <ul class="footer-list">
-        <li>Innovation programs that have ideas but lack operational traction</li>
-        <li>Products or platforms that aren't growing the way they should</li>
-        <li>Digital experiences ready to be reinvented and rebuilt from the ground up</li>
-        <li>Making sure the thinking leads the technology, not the other way around</li>
-      </ul>
-
-      <p class="footer-closing">Message me via <a href="https://www.linkedin.com/in/massee" target="_blank">LinkedIN</a> or leave your email and I contact you asap to discuss your challenge.</p>
-
-      <form class="contact-form" id="contactForm">
-        <input type="email" class="contact-input" placeholder="Leave your email address" required id="emailInput">
-        <button type="submit" class="contact-btn">Send</button>
-      </form>
-      <p class="contact-confirmation" id="confirmation">Thank you! Opening your email client...</p>
-    </section>
+      <div class="carousel-fade"></div>
+    </div>
 
   </div>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modal">
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose">×</button>
-      <div class="modal-meta">
-        <div class="modal-meta-left">
-          <span class="modal-number" id="modalNumber"></span>
-          <span class="modal-tag" id="modalTag"></span>
-        </div>
-        <span class="modal-year" id="modalYear"></span>
-      </div>
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <button class="modal-close" id="modalClose">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal-number" id="modalNumber"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-client" id="modalClient"></p>
       <p class="modal-body" id="modalBody"></p>
-      <div class="outcome-block">
-        <div class="outcome-label">Outcome</div>
-        <p class="outcome-text" id="modalOutcome"></p>
-      </div>
-      <div class="role-strip">
-        <div>
-          <div class="role-item-label">My Role</div>
-          <div class="role-item-value" id="modalRole"></div>
+      <p class="modal-outcome-label">Outcome</p>
+      <p class="modal-outcome" id="modalOutcome"></p>
+      <div class="modal-meta">
+        <div class="modal-meta-item">
+          <span class="modal-meta-label">Role</span>
+          <span class="modal-meta-value" id="modalRole"></span>
         </div>
-        <div>
-          <div class="role-item-label">Organisation</div>
-          <div class="role-item-value" id="modalOrg"></div>
+        <div class="modal-meta-item">
+          <span class="modal-meta-label">Year</span>
+          <span class="modal-meta-value" id="modalYear"></span>
         </div>
-        <div>
-          <div class="role-item-label">Status</div>
-          <div class="role-item-value" id="modalStatus"></div>
+        <div class="modal-meta-item">
+          <span class="modal-meta-label">Status</span>
+          <span class="modal-meta-value" id="modalStatus"></span>
         </div>
       </div>
     </div>
   </div>
 
   <script>
+    // Carousel navigation
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const scrollAmount = 340;
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
     // Case data
     const cases = {
       1: {
-        number: 'Case I',
-        tag: 'Product vision & experience design',
-        year: '2015–2017',
+        number: 'I',
         title: 'uGrow',
-        subtitle: 'Philips Avent — Amsterdam, Eindhoven & Bangalore',
+        client: 'Philips Avent — Amsterdam & Bangalore',
         body: 'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design across a cross-functional discovery and delivery programme, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve.',
         outcome: 'First medically certified smart parenting platform in the US and EU. CES Innovation Award, iF Design Award, Red Dot Award.',
         role: 'Experience design lead',
-        org: 'Philips Design',
+        year: '2015 – 2017',
         status: 'Shipped'
       },
-      schwung: {
-        number: 'Case II',
-        tag: 'Innovation capability & venture building',
-        year: '2017–2020',
-        title: 'SCHWUNG',
-        subtitle: 'WPG UItgevers — Amsterdam',
-        body: '<p>WPG needed an innovation capability, the mindset, skillset and toolset to build a permanent innovation engine. I was hired to build this innovation hub named SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model, structured around a 4-D strategy — Direct to consumer, Data Driven, Digital, Device independent.</p><p>150 ideas ran through the funnel over three years. The ones that survived validation launched: Coachfinder, Spiek!, ThrillerAbo, Thrillseeker, Kinderboeken.nl. Alongside the launches, SCHWUNG embedded new practices across the organisation — continuous improvement, data-driven journalism — and built five product teams organised around consumer need spaces: Education, Stories, Mindstyle, Magazines and Kids.</p>',
-        outcome: 'New ways of working embedded across the organisation. Modernized digital landscape ran by agile product teams in place, new capabilities like podcast publishing added and multiple products launched and generating revenue.',
-        role: 'Head of Innovation, MT member',
-        org: 'WPG Uitgevers',
-        status: 'Restructured - Divested'
-      },
       2: {
-        number: 'Case III',
-        tag: 'Platform strategy & innovation portfolio',
-        year: '2017–2020',
-        title: 'RIZE',
-        subtitle: 'WPG uitgevers — Amsterdam',
-        body: "WPG's most trusted magazine brands were losing subscribers with no viable digital replacement. The strategic insight: publishers own the most valuable content in the market but can no longer monetise it directly — flip the model, use content as marketing and sell memberships and products in the wellbeing space. That became RIZE.",
-        outcome: 'The risk was decided too high to push RIZE. The magazine business was sold within a year. Parts of the concept have been seprately implemented',
+        number: 'II',
+        title: 'SCHWUNG',
+        client: 'WPG Publishers — Amsterdam',
+        body: 'WPG Publishers needed an innovation capability — not a project, but a permanent engine. I built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model, structured around a 4-D strategy — Direct to consumer, Data Driven, Digital, Device independent. 150 ideas ran through the funnel over three years. The ones that survived validation launched: Coachfinder, Spiek!, ThrillerAbo, Thrillseeker, Kinderboeken.nl.',
+        outcome: 'Multiple products launched and generating revenue. New ways of working embedded across the organisation. The innovation capability outlasted the programmes it spawned.',
         role: 'Head of Innovation, MT member',
-        org: 'WPG Uitgevers',
-        status: 'Magazines branch sold'
+        year: '2017 – 2020',
+        status: 'Running'
       },
       3: {
-        number: 'Case IV',
-        tag: 'Product concept & experience design',
-        year: '2023–2024',
-        title: 'YouR',
-        subtitle: 'Rabobank — via Macaw, Hoofddorp',
-        body: "Rabobank's 50,000 employees had no coherent digital workplace — every secondary task meant jumping between legacy tools. I led research and concept development and originated YouR (you R, your rabobank): a personalized, AI-assisted platform replacing the fragmented tool landscape with a single intelligent interaction layer.",
-        outcome: 'Strategic blueprint handed over to the organisation for implementation.',
-        role: 'Digital strategist & design lead',
-        org: 'Macaw for Rabobank',
-        status: 'Blueprint'
+        number: 'III',
+        title: 'RIZE',
+        client: 'WPG Publishers — Amsterdam',
+        body: "WPG's most trusted magazine brands were losing subscribers with no viable digital replacement. The strategic insight: publishers own the most valuable content in the market but can no longer monetise it directly — flip the model, use content as marketing and sell memberships and products in the wellbeing space. That became RIZE.",
+        outcome: 'Coachfinder and ThrillerAbo launched and generated revenue. RIZE was not funded. The magazine business was sold within a year — the strategic logic played out exactly as forecast.',
+        role: 'Head of Innovation, MT member',
+        year: '2017 – 2020',
+        status: 'Concept — not funded'
       },
       4: {
-        number: 'Case V',
-        tag: 'Organisational vision & product strategy',
-        year: '2024–2026',
-        title: 'AirportOS',
-        subtitle: 'Amsterdam Airport Schiphol — Amsterdam',
-        body: 'On one of Europes largest air travel hubs capacity limits are reached and two departments — APOC and FACT — ran in parallel without shared direction or tools. As strategic change manager I advised on the operational merger of both departments and defined the vision,operating model, roadmap and governance through 2030. In parallel I developed the AirportOS vision with the IT & Data department: A layered approach for Total Airport Management enabling predictive, transparent, end-to-end visibility on airport capacity across the multi-party chain. ',
-        outcome: 'Shared vision, capabilities framework and transformation roadmap handed over. Multi-year programme governance in place.',
-        role: 'Strategic Change Manager',
-        org: 'Amsterdam Airport Schiphol',
-        status: 'In development'
+        number: 'IV',
+        title: 'YouR',
+        client: 'Rabobank — via Macaw, Amsterdam',
+        body: "Rabobank's 50,000 employees had no coherent digital workplace — every secondary task meant jumping between legacy tools. I led research and concept development through 18 interviews and trend mapping, then originated YouR: a personalized, AI-assisted platform replacing the fragmented tool landscape with a single intelligent interaction layer.",
+        outcome: 'Strategic blueprint handed over to the organisation for implementation.',
+        role: 'Digital strategist & design lead',
+        year: '2023 – 2024',
+        status: 'Blueprint — not implemented'
       },
       5: {
-        number: 'Case VI',
-        tag: 'Corporate venture & eHealth strategy',
-        year: '2021–2022',
+        number: 'V',
+        title: 'AirportOS',
+        client: 'Amsterdam Airport Schiphol',
+        body: 'Schiphol was at capacity limits with two departments — APOC and FACT — running in parallel without shared direction or tools. I developed the AirportOS vision: an intelligence layer letting Schiphol predict, coordinate and optimise capacity across the chain. In parallel, I led the merger of both departments and defined the operating model, roadmap and governance through 2030.',
+        outcome: 'Shared vision, capabilities framework and transformation roadmap handed over. Multi-year programme governance in place.',
+        role: 'Strategic Change Manager',
+        year: '2024 – 2026',
+        status: 'Blueprint handed over'
+      },
+      6: {
+        number: 'VI',
         title: 'NN International',
-        subtitle: 'NN Group — Amsterdam, The Hague, Madrid',
-        body: "NN International had deep customer trust in health and finance and needed to grow beyond its core insurance business in Spain, Turkey and Poland. Within NN Group's corporate venture structure, I led multidisciplinary teams spanning marketing, service design and IT through the full early-stage innovation cycle — identifying needs, framing propositions, prototyping and testing in the eHealth domain. We ran teams for elderly care service Welbi in Spain, and ehealth engagement platforms in Turkey and Poland.",
+        client: 'NN Group — Amsterdam',
+        body: "NN International had deep customer trust in health and finance and needed to grow beyond its core insurance business. Within NN Group's corporate venture structure, I led multidisciplinary teams spanning marketing, service design and IT through the full early-stage innovation cycle — identifying needs, framing propositions, prototyping and testing in the eHealth domain.",
         outcome: 'Multiple eHealth propositions developed and trialed.',
         role: 'Innovation lead',
-        org: 'NN Group',
-        status: 'Some Ventured, Others invalidated'
+        year: '2021 – 2022',
+        status: 'Ventured'
       }
     };
 
     // Modal functionality
-    const modal = document.getElementById('modal');
+    const modal = document.getElementById('modalOverlay');
     const modalClose = document.getElementById('modalClose');
+    const cards = document.querySelectorAll('.project-card');
 
-    function openModal(caseNum) {
-      const key = isNaN(caseNum) ? caseNum : Number(caseNum);
-      const data = cases[key];
-      document.getElementById('modalNumber').textContent = data.number;
-      document.getElementById('modalTag').textContent = data.tag;
-      document.getElementById('modalYear').textContent = data.year;
-      document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalSubtitle').textContent = data.subtitle;
-      document.getElementById('modalBody').innerHTML = data.body;
-      document.getElementById('modalOutcome').textContent = data.outcome;
-      document.getElementById('modalRole').textContent = data.role;
-      document.getElementById('modalOrg').textContent = data.org;
-      document.getElementById('modalStatus').textContent = data.status;
-
-      modal.classList.add('active');
-      document.body.classList.add('modal-open');
-    }
-
-    function closeModal() {
-      modal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-    }
-
-    // Case card click handlers
-    document.querySelectorAll('.case-card').forEach(card => {
+    cards.forEach((card, index) => {
       card.addEventListener('click', () => {
-        const caseNum = card.getAttribute('data-case');
-        openModal(caseNum);
+        const caseData = cases[index + 1];
+        if (caseData) {
+          document.getElementById('modalNumber').textContent = caseData.number;
+          document.getElementById('modalTitle').textContent = caseData.title;
+          document.getElementById('modalClient').textContent = caseData.client;
+          document.getElementById('modalBody').textContent = caseData.body;
+          document.getElementById('modalOutcome').textContent = caseData.outcome;
+          document.getElementById('modalRole').textContent = caseData.role;
+          document.getElementById('modalYear').textContent = caseData.year;
+          document.getElementById('modalStatus').textContent = caseData.status;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
       });
     });
 
-    // Close modal handlers
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
-    });
-
-    // Carousel functionality
-    const track = document.querySelector('.carousel-track');
-    const leftArrow = document.querySelector('.arrow-left');
-    const rightArrow = document.querySelector('.arrow-right');
-    const cardWidth = 290 + 24; // card width + gap
-
-    function updateArrows() {
-      leftArrow.disabled = track.scrollLeft <= 0;
-      rightArrow.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
-    }
-
-    leftArrow.addEventListener('click', () => {
-      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
-
-    rightArrow.addEventListener('click', () => {
-      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    });
-
-    track.addEventListener('scroll', updateArrows);
-    updateArrows();
-
-    // Drag to scroll
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    track.addEventListener('mousedown', (e) => {
-      isDown = true;
-      track.classList.add('dragging');
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
-
-    track.addEventListener('mouseleave', () => {
-      isDown = false;
-      track.classList.remove('dragging');
-    });
-
-    track.addEventListener('mouseup', () => {
-      isDown = false;
-      track.classList.remove('dragging');
-    });
-
-    track.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollLeft - walk;
-    });
-
-    // Contact form
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('emailInput').value;
-      const confirmation = document.getElementById('confirmation');
-      confirmation.classList.add('show');
-
-      setTimeout(() => {
-        window.location.href = `mailto:laurensmassee@protonmail.com?subject=Let's talk&body=Reply to: ${encodeURIComponent(email)}`;
-      }, 500);
     });
   </script>
 
