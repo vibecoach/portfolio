@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laurens Massee — Product Strategist</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 70vh;
+      max-height: 600px;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left content side */
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem 4rem;
+      max-width: 60%;
+      z-index: 2;
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ff3b1f;
+      margin-bottom: 1.5rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #ff3b1f;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .masthead {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.75rem;
+      color: #fff;
+      max-width: 580px;
+    }
+
+    .masthead em {
+      font-style: italic;
+      color: #ff3b1f;
+    }
+
+    .body-text {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 480px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 0.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .hero-cta:hover {
+      border-color: #fff;
+    }
+
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Right image side */
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, #000 0%, rgba(0,0,0,0.75) 35%, transparent 65%),
+        linear-gradient(to top, #000 0%, transparent 30%);
+      z-index: 1;
+    }
+
+    /* ── CAROUSEL SECTION ── */
+    .carousel-section {
+      background: #000;
+      padding: 0 0 5rem;
+      margin-top: 0;
+    }
+
+    .carousel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    .carousel-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .carousel-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .carousel-btn:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+    }
+
+    .carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .carousel-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Carousel track */
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 0 4rem 1.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Case cards */
+    .case-card {
+      flex: 0 0 340px;
+      aspect-ratio: 4/5;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1a1a1a;
+    }
+
+    .case-card-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1f1f2e 0%, #0d0d12 100%);
+    }
+
+    .case-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+      z-index: 1;
+    }
+
+    .case-card-content {
+      position: absolute;
+      inset: 0;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .case-number {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ff3b1f;
+      margin-bottom: auto;
+    }
+
+    .case-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .case-client {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #c8b87a;
+      margin-bottom: 1rem;
+    }
+
+    .case-hook {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    .case-year {
+      font-size: 0.75rem;
+      color: #c8b87a;
+      margin-top: 1rem;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero {
+        height: 60vw;
+        max-height: 420px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 1.5rem;
+        justify-content: flex-end;
+      }
+
+      .masthead {
+        font-size: 1.8rem;
+      }
+
+      .carousel-header {
+        padding: 0 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .carousel-track {
+        padding: 0 1.5rem 1rem;
+        gap: 1rem;
+      }
+
+      .case-card {
+        flex: 0 0 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-label">Product Strategy</span>
+      <h1 class="masthead">Lorem ipsum dolor sit amet, <em>consectetur adipiscing elit.</em></h1>
+      <p class="body-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <a href="#cases" class="hero-cta">
+        View selected cases
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="hero-bg.jpg" alt="Background">
+    </div>
+  </section>
+
+  <!-- CAROUSEL SECTION -->
+  <section id="cases" class="carousel-section">
+    <div class="carousel-header">
+      <h2 class="carousel-title">Selected cases</h2>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-track" id="carouselTrack">
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case I</span>
+          <h3 class="case-title">uGrow</h3>
+          <p class="case-client">Philips Avent</p>
+          <p class="case-hook">A hardware-first baby brand with no platform. Built a connected parenting vision from scratch.</p>
+          <span class="case-year">2015 – 2017</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case II</span>
+          <h3 class="case-title">SCHWUNG</h3>
+          <p class="case-client">WPG Uitgevers</p>
+          <p class="case-hook">A traditional publisher needed an innovation engine. Built from nothing in three years.</p>
+          <span class="case-year">2017 – 2020</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case III</span>
+          <h3 class="case-title">RIZE</h3>
+          <p class="case-client">WPG Uitgevers</p>
+          <p class="case-hook">Trusted magazine brands bleeding subscribers with no digital future. Sunset or sunrise?</p>
+          <span class="case-year">2017 – 2020</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case IV</span>
+          <h3 class="case-title">YouR</h3>
+          <p class="case-client">Rabobank via Macaw</p>
+          <p class="case-hook">50,000 employees, no coherent digital workplace. Imagine a better future.</p>
+          <span class="case-year">2023 – 2024</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case V</span>
+          <h3 class="case-title">AirportOS</h3>
+          <p class="case-client">Amsterdam Airport Schiphol</p>
+          <p class="case-hook">An airport at capacity limits, two departments without alignment.</p>
+          <span class="case-year">2024 – 2026</span>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-card-bg"></div>
+        <div class="case-card-content">
+          <span class="case-number">Case VI</span>
+          <h3 class="case-title">NN International</h3>
+          <p class="case-client">NN Group</p>
+          <p class="case-hook">Deep customer trust in health and finance. New territory in eHealth.</p>
+          <span class="case-year">2021 – 2022</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const scrollAmount = 360;
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
