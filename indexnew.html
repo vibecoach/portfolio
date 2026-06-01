@@ -133,9 +133,11 @@
 
     /* ── Projects section ── */
     .projects-section {
-      padding: 0 4rem 4rem;
+      padding: 4rem 4rem;
       max-width: 1400px;
       margin: 0 auto;
+      position: relative;
+      z-index: 20;
     }
 
     /* ── Carousel container ── */
@@ -218,24 +220,25 @@
     }
 
     .card-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
+      height: 48px;
+      width: auto;
+      max-width: 120px;
       object-fit: contain;
-      background: #f5f5f5;
+      border-radius: 0;
+      background: transparent;
     }
 
     .card-logo-placeholder {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
       background: #3b82f6;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'DM Sans', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
     }
 
@@ -565,7 +568,7 @@
         </article>
 
         <article class="project-card">
-          <div class="card-logo-placeholder">N</div>
+          <img src="logos/nn-group.jpg" alt="NN Group" class="card-logo">
           <h3 class="card-title">NN International</h3>
           <p class="card-client">NN Group</p>
           <p class="card-body">Deep customer trust in health and finance. Could that open new territory in
