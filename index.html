@@ -176,7 +176,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #fff;
+      background: #FFD700;
       color: #08163b;
       font-family: 'Open Sans', sans-serif;
       font-size: 0.95rem;
@@ -483,8 +483,16 @@
       min-width: 100%;
     }
 
+    .testimonial-blockquote {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: -1.5rem;
+    }
+
     .testimonial-quote {
-      font-size: 1.1rem;
+      font-size: 18px;
       font-style: italic;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.85);
@@ -763,9 +771,9 @@
 
   <div class="content">
     <h1 class="headline">Clarity is the cure.</h1>
-    <p class="subheadline">Helping organizations <em>explore</em> & <em>articulate</em> possible futures.</p>
+    <p class="subheadline">From exploring to defining possible futures.</p>
     <p class="intro">
-    Navigating from now to new to next. I help organizations turn fragmented ideas about innovation & transformation into a clear direction that is aligned across teams. Whether it's exploring and articulating future visions, defining new products & services or outlining strategic plans for the coming years. Over the past 25 years I've worked across startups, corporate ventures and enterprise organizations on digital products, innovation and transformation programs for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.
+    When navigating from now to new to next, clarity is your compass. I help organizations turn fragmented ideas about innovation & transformation into a clear direction that is aligned to processes across teams. Whether it's exploring and articulating future visions, defining new products & services or outlining strategic plans for the coming years. Over the past 25 years I've worked across startups, corporate ventures and enterprise organizations on digital products, innovation and transformation programs for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.
     </p>
     <div class="scroll-hint">
       <span class="scroll-hint-text">Learn more</span>
@@ -849,20 +857,24 @@
       <div class="testimonial-carousel">
         <div class="testimonial-track" id="testimonialTrack">
           <div class="testimonial-item">
+            <span class="testimonial-blockquote">"</span>
             <p class="testimonial-quote">"After some critical inquiry Laurens enjoys to see real opportunities through and put them to the test. He tailored a thourough approach to innovation in our publishing business context. He brought in new capabilities and took along many employees to become innovators providing them with the mindset, skillset and toolset to do so. His leadership of our innovation studio was carried out with determination, energetic optimism and creativity."</p>
-            <p class="testimonial-author">— CEO, WPG Publishers</p>
+            <p class="testimonial-author">CEO, WPG Publishers</p>
           </div>
           <div class="testimonial-item">
+            <span class="testimonial-blockquote">"</span>
             <p class="testimonial-quote">"A strategic mind with hands-on pragmatism. Laurens filters signal from noise and captures many different viewpoints into concrete usable playbooks. He has a good way with stakeholders, but is not shy to challenge the status quo directly."</p>
-            <p class="testimonial-author">— Manager Solutions, Schiphol Airport</p>
+            <p class="testimonial-author">Manager Solutions, Schiphol Airport</p>
           </div>
           <div class="testimonial-item">
+            <span class="testimonial-blockquote">"</span>
             <p class="testimonial-quote">"Working with Laurens is always a pleasure. He is a profound innovation expert, capable of drawing from a broad toolbox of innovation skills. What's more, he is able to zoom in and out, switching between a focus on execution as well as providing a birds-eye view and supporting strategic decision making. Besides that, Laurens has an open, can-do mindset!"</p>
-            <p class="testimonial-author">— Head of Innovation, NN Group</p>
+            <p class="testimonial-author">Head of Innovation, NN Group</p>
           </div>
           <div class="testimonial-item">
+            <span class="testimonial-blockquote">"</span>
             <p class="testimonial-quote">"A great creative-strategic thinker, helping organizations move forward with their brand thinking, innovation agendas, and product management challenges. A wonderful colleague to work with, and a very nice person alltogether."</p>
-            <p class="testimonial-author">— Senior Innovation lead,SCWHUNG</p>
+            <p class="testimonial-author">Senior Innovation lead, SCWHUNG</p>
           </div>
         </div>
         <div class="testimonial-dots" id="testimonialDots">
@@ -1108,11 +1120,11 @@
       });
     });
 
-    // Auto-advance testimonials every 12 seconds
+    // Auto-advance testimonials every 15 seconds
     setInterval(() => {
       const nextIndex = (currentTestimonial + 1) % testimonialDots.length;
       showTestimonial(nextIndex);
-    }, 12000);
+    }, 15000);
   </script>
 </body>
 </html>
