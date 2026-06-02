@@ -6,7 +6,7 @@
   <title>Laurens Massee | Strategic Innovation & Product Leadership</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,7 +15,7 @@
     }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
       background:
         radial-gradient(ellipse at 15% 40%, #6cb4f8 0%, #2253b0 30%, transparent 65%),
@@ -51,11 +51,74 @@
       z-index: 10;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 6rem 3rem 5rem;
+      padding: 2rem 3rem 3rem;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      max-width: 1280px;
+      margin: 0 auto;
+      background: linear-gradient(to bottom, rgba(8, 22, 59, 0.9) 0%, transparent 100%);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .monogram {
+      height: 80px;
+      width: auto;
+    }
+
+    .name-text {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: #08163b;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .nav-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .nav-cta:hover svg {
+      transform: translateX(3px);
     }
 
     .headline {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-weight: 700;
       font-size: clamp(1.9rem, 5.1vw, 4.2rem);
       line-height: 1.02;
@@ -63,20 +126,43 @@
       color: #fff;
       max-width: 16ch;
       text-wrap: balance;
-      margin-bottom: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .headline em {
       font-style: italic;
-      color: #6cb4f8;
+      color: #FFD700;
+    }
+
+    .headline-divider {
+      width: 60px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.4);
+      margin: 1.5rem 0;
+    }
+
+    .subheadline {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: #fff;
+      max-width: 900px;
+      margin-bottom: 2.5rem;
+    }
+
+    .subheadline em {
+      font-style: italic;
+      color: #FFD700;
     }
 
     .intro {
-      font-size: 1.05rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      line-height: 1.75;
+      line-height: 1.6;
       color: rgba(255, 255, 255, 0.75);
-      max-width: 540px;
+      max-width: 900px;
       margin-bottom: 2.5rem;
     }
 
@@ -86,7 +172,7 @@
       gap: 0.5rem;
       background: #fff;
       color: #08163b;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
@@ -111,7 +197,7 @@
     }
 
     .section-heading {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-weight: 600;
       font-size: 1.5rem;
       color: #fff;
@@ -119,7 +205,7 @@
     }
 
     .projects-section {
-      padding: 4rem 4rem;
+      padding: 2rem 4rem 4rem;
       max-width: 1400px;
       margin: 0 auto;
       position: relative;
@@ -530,9 +616,35 @@
       color: rgba(255, 255, 255, 0.4);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
+      .top-nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-left {
+        gap: 0.75rem;
+      }
+
+      .monogram {
+        height: 50px;
+      }
+
+      .name-text {
+        font-size: 14px;
+      }
+
+      .nav-cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .nav-cta svg {
+        width: 14px;
+        height: 14px;
+      }
+
       .content {
-        padding: 4rem 1.5rem 3rem;
+        padding: 1.5rem 1.5rem 2rem;
       }
 
       .hero-portrait {
@@ -546,10 +658,20 @@
         max-width: 100%;
       }
 
+      .subheadline {
+        font-size: 1.4rem;
+        max-width: 100%;
+      }
+
+      .intro {
+        font-size: 1.1rem;
+        max-width: 100%;
+      }
+
       .projects-section,
       .testimonials-section,
       .contact-section {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
       }
 
       .testimonials-box {
@@ -580,19 +702,25 @@
     <img src="hero-bg.jpg" alt="">
   </div>
 
-  <div class="content">
-    <h1 class="headline">
-      Helping organizations <em>explore</em> &  <em>articulate</em> possible futures.
-    </h1>
-    <p class="intro">
-      Navigating from now to new to next, I help organizations turn fragmented ideas into a clear direction that is aligned across teams. Wether it's exploring future visions, defining new products & services or outlining strategic plans for transformations. My work bridges business, design and tech, especially where change is needed but the way forward is still unclear. Over the past 25 years I've worked across startups, scale-ups and enterprise organizations on digital products, platforms and transformation initiatives for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.
-    </p>
-    <a href="#contact" class="cta-button">
+  <nav class="top-nav">
+    <div class="nav-left">
+      <img src="monogram.png" alt="Laurens Massee monogram" class="monogram">
+      <span class="name-text">Laurens Massee</span>
+    </div>
+    <a href="#contact" class="nav-cta">
       Get in touch
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
     </a>
+  </nav>
+
+  <div class="content">
+    <h1 class="headline">Clarity is the cure.</h1>
+    <p class="subheadline">Helping organizations <em>explore</em> & <em>articulate</em> possible futures.</p>
+    <p class="intro">
+      Navigating from now to new to next, I help organizations turn fragmented ideas into a clear direction that is aligned across teams. Whether it's exploring and articulating future visions, defining new products & services or outlining strategic plans for transformations. My work bridges business, design and tech, especially where change is needed but the way forward is still unclear. Over the past 25 years I've worked across startups, corporate ventures and enterprise organizations on digital products, innovation and transformation programs for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.
+    </p>
   </div>
 
   <div class="projects-section">
@@ -615,23 +743,23 @@
         <article class="project-card" data-case="1">
           <img src="logos/philips-avent.jpg" alt="Philips Avent" class="card-logo">
           <h3 class="card-title">uGrow</h3>
-          <p class="card-client">Philips Avent</p>
-          <p class="card-body">A hardware-first baby brand with no platform. Built a connected parenting vision from scratch — app, baby monitor, smart thermometer.</p>
+          <p class="card-client">Philips Avent, Experience Design lead</p>
+          <p class="card-body">A hardware-first baby brand with no platform to build a lasting customer relation. From concept to prototypes to live app we realized the smart parenting ecosystem vision from scratch.</p>
           <span class="card-year">2015 – 2017</span>
         </article>
 
         <article class="project-card" data-case="2">
           <img src="logos/schiphol.png" alt="AMS Schiphol" class="card-logo">
-          <h3 class="card-title">AirportOS</h3>
-          <p class="card-client">Amsterdam Airport Schiphol</p>
-          <p class="card-body">An airport at capacity limits, departments without alignment, and no intelligent platform to run on. Design and plan the change without disturbing the run.</p>
+          <h3 class="card-title">Airport Operations</h3>
+          <p class="card-client">Amsterdam Airport Schiphol, Strategic Change Manager</p>
+          <p class="card-body">An airport at capacity limits, departments missing alignment, and no intelligent platform to rely on. Design and plan the change without disturbing the run.</p>
           <span class="card-year">2024 – 2026</span>
         </article>
 
         <article class="project-card" data-case="3">
           <img src="logos/nn-group.jpg" alt="NN Group" class="card-logo">
           <h3 class="card-title">NN International</h3>
-          <p class="card-client">NN Group</p>
+          <p class="card-client">NN Group, Lead Customer Engagement Platforms</p>
           <p class="card-body">Deep customer trust in health and finance. Could that open new territory in eHealth and Family care?</p>
           <span class="card-year">2021 – 2022</span>
         </article>
@@ -639,7 +767,7 @@
         <article class="project-card" data-case="4">
           <img src="logos/schwung.png" alt="SCHWUNG" class="card-logo">
           <h3 class="card-title">SCHWUNG</h3>
-          <p class="card-client">WPG Uitgevers</p>
+          <p class="card-client">WPG Uitgevers, Head of Innovation</p>
           <p class="card-body">A traditional publisher needed an innovation engine. Built from nothing — strategy, innovation funnel, funding model, and five product teams.</p>
           <span class="card-year">2017 – 2020</span>
         </article>
@@ -647,7 +775,7 @@
         <article class="project-card" data-case="5">
           <img src="logos/your.png" alt="YouR" class="card-logo">
           <h3 class="card-title">YouR</h3>
-          <p class="card-client">Rabobank via Macaw</p>
+          <p class="card-client">Rabobank via Macaw, Experience Design Lead</p>
           <p class="card-body">50,000 employees, no coherent digital workplace. Every task meant a different legacy tool. Imagine a better future digital point of interaction for HR and IT.</p>
           <span class="card-year">2023 – 2024</span>
         </article>
@@ -655,7 +783,7 @@
         <article class="project-card" data-case="6">
           <img src="logos/rize.png" alt="RIZE" class="card-logo">
           <h3 class="card-title">RIZE</h3>
-          <p class="card-client">WPG Uitgevers</p>
+          <p class="card-client">WPG Uitgevers, Head of Innovation</p>
           <p class="card-body">Trusted magazine brands bleeding subscribers with no digital future. Sunset or sunrise?</p>
           <span class="card-year">2017 – 2020</span>
         </article>
@@ -669,22 +797,27 @@
       <div class="testimonial-carousel">
         <div class="testimonial-track" id="testimonialTrack">
           <div class="testimonial-item">
-            <p class="testimonial-quote">"After critical inquiry Laurens enjoys to see real opportunities through and put them to the test. He tailored a thourough approach to innovation in our publishing business context. He brought in new capabilities and took along many employees to become innovators providing them with the mindset, skillset and toolset to do so. His leadership of our innovation studio was carried out with determination, energetic optimism and creativity."</p>
+            <p class="testimonial-quote">"After some critical inquiry Laurens enjoys to see real opportunities through and put them to the test. He tailored a thourough approach to innovation in our publishing business context. He brought in new capabilities and took along many employees to become innovators providing them with the mindset, skillset and toolset to do so. His leadership of our innovation studio was carried out with determination, energetic optimism and creativity."</p>
             <p class="testimonial-author">— CEO, WPG Publishers</p>
           </div>
           <div class="testimonial-item">
-            <p class="testimonial-quote">"A strategic mind with hands-on pragmatism. Laurens bridges the gap between vision and execution like few others. He filters signal from noise and captures many different viewpoints into concrete usable playbooks. Has a good way with stakeholders, but is not shy to challenge the status quo directly."</p>
+            <p class="testimonial-quote">"A strategic mind with hands-on pragmatism. Laurens filters signal from noise and captures many different viewpoints into concrete usable playbooks. He has a good way with stakeholders, but is not shy to challenge the status quo directly."</p>
             <p class="testimonial-author">— Manager Solutions, Schiphol Airport</p>
           </div>
           <div class="testimonial-item">
             <p class="testimonial-quote">"Working with Laurens is always a pleasure. He is a profound innovation expert, capable of drawing from a broad toolbox of innovation skills. What's more, he is able to zoom in and out, switching between a focus on execution as well as providing a birds-eye view and supporting strategic decision making. Besides that, Laurens has an open, can-do mindset!"</p>
             <p class="testimonial-author">— Head of Innovation, NN Group</p>
           </div>
+          <div class="testimonial-item">
+            <p class="testimonial-quote">"A great creative-strategic thinker, helping organizations move forward with their brand thinking, innovation agendas, and product management challenges. A wonderful colleague to work with, and a very nice person alltogether."</p>
+            <p class="testimonial-author">— Senior Innovation lead,SCWHUNG</p>
+          </div>
         </div>
         <div class="testimonial-dots" id="testimonialDots">
           <button class="testimonial-dot active" data-index="0"></button>
           <button class="testimonial-dot" data-index="1"></button>
           <button class="testimonial-dot" data-index="2"></button>
+          <button class="testimonial-dot" data-index="3"></button>
         </div>
       </div>
     </div>
@@ -809,8 +942,8 @@
       1: {
         logo: 'logos/philips-avent.jpg',
         title: 'uGrow',
-        client: 'Philips Avent — Amsterdam & Bangalore',
-        body: 'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design across a cross-functional discovery and delivery programme, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve.',
+        client: 'Philips Avent',
+        body: 'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design spanning the discovery, design and delivery phases, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve. Working with hardware engineering, software development, design, R&D and business teams in Eindhoven, Amsterdam and Bangalore',
         outcome: 'First medically certified smart parenting platform in the US and EU. CES Innovation Award, iF Design Award, Red Dot Award.',
         role: 'Experience design lead',
         year: '2015 – 2017',
@@ -820,7 +953,7 @@
         logo: 'logos/schiphol.png',
         title: 'AirportOS',
         client: 'Amsterdam Airport Schiphol',
-        body: 'Schiphol is one of the largest aviation hubs in Europe, challenged by capacity limits. With two departments — APOC and FACT — running forecasting and planning in parallel without shared direction or tools it was time to define a new department and way of working. I developed the vision for this new Airport Capacity Planning & Control department and iterated it further into a roadmap, annual plans and translation to the required tech. The latter became the AirportOS vision I developed closely with IT & Data departments.',
+        body: 'Schiphol is one of the largest aviation hubs in Europe, challenged by capacity limits. With two departments — APOC and FACT — running forecasting and planning in parallel without shared direction or tools it was time to define a new department and way of working. I shaped many viewpoints into a cohesive, shared vision for this new Airport Capacity Planning & Control department. Then I iterated it further into a roadmap, annual plans and translation to the required tech. The latter became the AirportOS vision I developed closely with IT & Data departments.',
         outcome: 'Shared vision, capabilities framework and transformation roadmap handed over. Multi-year programme governance in place.',
         role: 'Strategic Change Manager',
         year: '2024 – 2026',
@@ -829,7 +962,7 @@
       3: {
         logo: 'logos/nn-group.jpg',
         title: 'NN International',
-        client: 'NN Group — Amsterdam',
+        client: 'NN Group',
         body: "NN International had deep customer trust in health and finance and needed to grow beyond its core insurance business. Within NN Group's corporate venture structure, I led multidisciplinary teams spanning marketing, service design and IT through the full early-stage innovation cycle — identifying needs, framing propositions, prototyping and testing in the eHealth domain.",
         outcome: 'Multiple eHealth propositions developed and trialed.',
         role: 'Innovation lead',
@@ -839,32 +972,32 @@
       4: {
         logo: 'logos/schwung.png',
         title: 'SCHWUNG',
-        client: 'WPG Publishers — Amsterdam',
-        body: 'WPG Publishers needed an innovation capability — not a project, but a permanent engine. I built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model, structured around a 4-D strategy — Direct to consumer, Data Driven, Digital, Device independent. 150 ideas ran through the funnel over three years. The ones that survived validation launched: Coachfinder, Spiek!, ThrillerAbo, Thrillseeker, Kinderboeken.nl.',
-        outcome: 'Multiple products launched and generating revenue. New ways of working embedded across the organisation. The innovation capability outlasted the programmes it spawned.',
+        client: 'WPG Publishers',
+        body: 'WPG Publishers needed an innovation capability, not as project, but as permanent engine. I built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model, structured around a 4-D strategy — Direct to consumer, Data Driven, Digital, Device independent. A 150 ideas pipeline ran through the funnel over three years. The ones that survived validation launched: Coachfinder, Spiek!, ThrillerAbo, Thrillseeker, Kinderboeken.nl, VN WhatsApp stories.',
+        outcome: 'Multiple products launched and generating revenue. New ways of working embedded across the organisation.',
         role: 'Head of Innovation, MT member',
         year: '2017 – 2020',
-        status: 'Running'
+        status: 'Innovation embedded in business units'
       },
       5: {
         logo: 'logos/your.png',
         title: 'YouR',
         client: 'Rabobank — via Macaw, Amsterdam',
-        body: "Rabobank's 50,000 employees had no coherent digital workplace — every secondary task meant jumping between legacy tools. I led research and concept development through 18 interviews and trend mapping, then originated YouR: a personalized, AI-assisted platform replacing the fragmented tool landscape with a single intelligent interaction layer.",
+        body: "Rabobank's 50,000 employees had no coherent digital workplace — every secondary task meant jumping between legacy tools. I led concept development of various concept directions, valudated with employees and stakeholders, then originated the final direction YouR: a personalized, AI-assisted omni-present layer replacing the fragmented tool landscape with a single intelligent interaction layer.",
         outcome: 'Strategic blueprint handed over to the organisation for implementation.',
         role: 'Digital strategist & design lead',
         year: '2023 – 2024',
-        status: 'Blueprint — not implemented'
+        status: 'Blueprint being further detailed in steps'
       },
       6: {
         logo: 'logos/rize.png',
         title: 'RIZE',
         client: 'WPG Publishers — Amsterdam',
-        body: "WPG's most trusted magazine brands were losing subscribers with no viable digital replacement. The strategic insight: publishers own the most valuable content in the market but can no longer monetise it directly — flip the model, use content as marketing and sell memberships and products in the wellbeing space. That became RIZE.",
-        outcome: 'Coachfinder and ThrillerAbo launched and generated revenue. RIZE was not funded. The magazine business was sold within a year — the strategic logic played out exactly as forecast.',
+        body: "WPG's most trusted magazine brands were losing subscribers with no viable digital replacement. The strategic insight: publishers own the most valuable content in the market, but can no longer monetise it directly — flip the model, use content as marketing and sell memberships and products in the wellbeing space. That became RIZE.",
+        outcome: 'The board decided RIZE was too risky investment. The magazine business was sold within a year. Parts of the concept are implemented otherwise.',
         role: 'Head of Innovation, MT member',
         year: '2017 – 2020',
-        status: 'Concept — not funded'
+        status: 'New owner'
       }
     };
 
@@ -923,11 +1056,11 @@
       });
     });
 
-    // Auto-advance testimonials every 6 seconds
+    // Auto-advance testimonials every 12 seconds
     setInterval(() => {
       const nextIndex = (currentTestimonial + 1) % testimonialDots.length;
       showTestimonial(nextIndex);
-    }, 6000);
+    }, 12000);
   </script>
 </body>
 </html>
