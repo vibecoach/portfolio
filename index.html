@@ -327,14 +327,14 @@
       .name-text { font-size: 15px; }
       .nav-cta { padding: 0.55rem 1rem; font-size: 0.78rem; }
 
-      /* Hero: photo full width, lower opacity, bottom-up fade */
+      /* Hero: photo full width, higher opacity for visibility, softer bottom fade */
       .hero-photo {
         width: 100%;
         -webkit-mask-image: none;
         mask-image: none;
       }
-      .hero-photo img { opacity: 0.28; }
-      .hero-photo::after { background: linear-gradient(to top, rgba(8,22,59,0.88) 0%, rgba(8,22,59,0.4) 55%, transparent 100%); }
+      .hero-photo img { opacity: 0.5; }
+      .hero-photo::after { background: linear-gradient(to top, rgba(8,22,59,0.75) 0%, rgba(8,22,59,0.2) 40%, transparent 70%); }
       .hero-spacer { flex: 0 0 48vh; }
       .hero-content { padding: 0 var(--gutter) 0; }
       .hero-intro { padding: 1rem var(--gutter) 2.5rem; }
