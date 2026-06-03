@@ -770,7 +770,7 @@
 
     document.getElementById('langToggle').addEventListener('click', e => {
       const b = e.target.closest('[data-lang]');
-      if (b) applyLang(b.getAttribute('data-lang'));
+      if (b && b.getAttribute('data-lang')) applyLang(b.getAttribute('data-lang'));
     });
 
     /* ─── CAROUSEL ─── */
