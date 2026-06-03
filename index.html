@@ -327,14 +327,14 @@
       .name-text { font-size: 15px; }
       .nav-cta { padding: 0.55rem 1rem; font-size: 0.78rem; }
 
-      /* Hero: photo full width, higher opacity for visibility, softer bottom fade */
+      /* Hero: use profile.png on mobile - full width, more visible */
       .hero-photo {
         width: 100%;
         -webkit-mask-image: none;
         mask-image: none;
       }
-      .hero-photo img { opacity: 0.5; }
-      .hero-photo::after { background: linear-gradient(to top, rgba(8,22,59,0.75) 0%, rgba(8,22,59,0.2) 40%, transparent 70%); }
+      .hero-photo img { opacity: 0.45; object-position: center 20%; }
+      .hero-photo::after { background: linear-gradient(to top, rgba(8,22,59,0.85) 0%, rgba(8,22,59,0.3) 50%, transparent 80%); }
       .hero-spacer { flex: 0 0 48vh; }
       .hero-content { padding: 0 var(--gutter) 0; }
       .hero-intro { padding: 1rem var(--gutter) 2.5rem; }
@@ -388,7 +388,10 @@
 
   <section class="hero" id="hero">
     <div class="hero-photo">
-      <img src="hero-bg.jpg" alt="Laurens Massee">
+      <picture>
+        <source media="(max-width: 900px)" srcset="profile.png">
+        <img src="hero-bg.jpg" alt="Laurens Massee">
+      </picture>
     </div>
     <div class="hero-spacer"></div>
     <div class="hero-content">
