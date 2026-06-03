@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laurens Massee - OG Image</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html, body {
+      width: 1200px;
+      height: 627px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    .og-container {
+      width: 1200px;
+      height: 627px;
+      position: relative;
+      background: radial-gradient(ellipse at 20% 30%, #2a4db8 0%, #1a2f7a 40%, #0f1d4d 100%);
+    }
+    
+    /* Photo on right side with fade */
+    .photo-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%);
+      opacity: 0.85;
+    }
+    
+    .photo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #1a2f7a 0%, rgba(26, 47, 122, 0.7) 30%, transparent 70%);
+    }
+    
+    /* Content on left side */
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 65%;
+      height: 100%;
+      padding: 48px 56px;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+    
+    /* Logo and name */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: auto;
+    }
+    
+    .monogram {
+      height: 44px;
+      width: auto;
+    }
+    
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    
+    /* Main content */
+    .main {
+      margin-bottom: auto;
+    }
+    
+    .headline {
+      font-size: 80px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.0;
+      margin-bottom: 20px;
+    }
+    
+    .subline {
+      font-size: 27px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.3;
+    }
+    
+    /* Footer */
+    .footer {
+      margin-top: auto;
+    }
+    
+    .label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 8px;
+    }
+    
+    .clients {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .clients span {
+      margin: 0 8px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-container">
+    <!-- Photo on right -->
+    <div class="photo-container">
+      <img src="https://laurensmassee.com/profile.png" alt="" class="photo">
+      <div class="photo-overlay"></div>
+    </div>
+    
+    <!-- Content on left -->
+    <div class="content">
+      <!-- Header: Logo + Name -->
+      <div class="header">
+        <img src="https://laurensmassee.com/monogram.png" alt="LM" class="monogram">
+        <span class="name">Laurens Massee</span>
+      </div>
+      
+      <!-- Main headline -->
+      <div class="main">
+        <h1 class="headline">Clarity is the cure.</h1>
+        <p class="subline">From exploring to defining possible futures.</p>
+      </div>
+      
+      <!-- Footer -->
+      <div class="footer">
+        <p class="label">Strategic Innovation &amp; Digital Transformation</p>
+        <p class="clients">Philips<span>·</span>Schiphol<span>·</span>Rabobank<span>·</span>NN Group<span>·</span>HP</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
