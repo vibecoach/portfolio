@@ -25,7 +25,11 @@
     body {
       font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
-      background: var(--bg-deep);
+      background:
+        radial-gradient(ellipse at 15% 40%, #6cb4f8 0%, #2253b0 30%, transparent 65%),
+        radial-gradient(ellipse at 60% 0%, #5aa0f0 0%, transparent 50%),
+        #08163b;
+      background-attachment: fixed;
       color: #fff;
       overflow-x: hidden;
     }
@@ -180,6 +184,9 @@
         radial-gradient(ellipse at 55% 0%, rgba(90,160,240,0.2) 0%, transparent 50%);
     }
 
+    /* Blue atmospheric glow handled by body gradient */
+    .hero-bg-glow { display: none; }
+
     .hero-content {
       position: relative;
       z-index: 10;
@@ -188,8 +195,6 @@
       justify-content: center;
       padding: 10rem 3rem 4rem 3rem;
       max-width: 680px;
-      /* Subtle gradient to keep text readable without killing the photo */
-      background: linear-gradient(to right, rgba(8,22,59,0.75) 0%, rgba(8,22,59,0.4) 70%, transparent 100%);
       min-height: 100vh;
     }
 
