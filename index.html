@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Laurens Massee"/>
-  <meta name="google-site-verification" content="T5xdvmW13VhJkybaEF1DIZWQS0B7mNTXm55Ax5e1nnI" />
+  <meta name="google-site-verification" content="T5xdvmW13VhJkybaEF1DIZWQS0B7mNTXm55Ax5e1nnI" >
+  <meta name="description" property="og:description" content="Guiding change from boardroom to backlog. I help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products & services.
+
+PRODUCT LEADERSHIP
+Define and drive product vision
+Translate strategy into execution
+Lead product management and UX teams
+
+INNOVATION & VENTURES
+Build innovation capability
+Define and roll out AI use cases
+Define & develop new business models and propositions
+
+DIGITAL STRATEGY & TRANSFORMATION
+Develop and embed digital vision
+Oversee digital project portfolio
+Bridge business, design and IT
+
+Nearly Three decades driving digital products and innovation, still endlessly fascinating by new leaps like applying AI to make solutions smarter. I enjoyed doing this for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP." />
+
   <title>Laurens Massee | Strategic Product & Innovation Leadership</title>
-  
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="From now to next." />
   <meta property="og:description" content="Guiding change from boardroom to backlog. I help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products & services.
@@ -215,9 +234,6 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
       color: rgba(255,255,255,0.75); max-width: 900px; margin-bottom: 2rem;
     }
 
-    .what-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
-    .what-list li { font-size: 1.2rem; font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 0.5rem; }
-
     /* expertise cards */
     .lm-expertise__grid {
       display: grid;
@@ -268,11 +284,6 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
     }
     @media (max-width: 900px) {
       .lm-expertise__grid { grid-template-columns: 1fr; }
-    }
-
-    .track-record {
-      margin-top: 0; font-size: 1.2rem; font-weight: 400;
-      color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 900px;
     }
 
     /* ─── PROJECTS CAROUSEL ─── */
@@ -385,12 +396,6 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
       position: relative;
       z-index: 10;
     }
-    .cta-heading {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: #fff;
-      margin-bottom: 2.5rem;
-    }
     .cta-grid {
       display: flex;
     }
@@ -459,16 +464,6 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
     .modal-meta-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(10,10,12,0.4); }
     .modal-meta-value { font-size: 0.875rem; font-weight: 500; color: #0a0a0c; }
 
-    /* ─── FOOTER ─── */
-    .footer { 
-      text-align: center; 
-      padding: 1.75rem; 
-      border-top: 1px solid rgba(255,255,255,0.07);
-      position: relative;
-      z-index: 10;
-    }
-    .footer-text { font-size: 0.78rem; color: rgba(255,255,255,0.28); }
-
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       :root { --gutter: 1.25rem; }
@@ -536,7 +531,7 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
 
       .section { padding: 3rem var(--gutter); }
       
-      .what-intro, .what-list li, .track-record { 
+      .what-intro { 
         font-size: 1rem; 
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -603,7 +598,7 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
       <p class="subheadline" data-i18n="subheadline">Guiding change from boardroom to backlog.</p>
     </div>
     <div class="hero-mid-spacer"></div>
-    <p class="hero-intro" data-i18n="intro">When navigating through change, clarity is your compass.<br>I help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products &amp services.</p>
+    <p class="hero-intro" data-i18n="intro">When navigating through change, clarity is your compass.<br>I help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products &amp; services.</p>
   </section>
 
   <!-- WHAT I DO -->
@@ -636,7 +631,7 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
           </ul>
         </div>
       </div>
-      <p class="what-intro" data-i18n="track_record">Nearly Three decades driving digital products and innovation, still  endlessly fascinating by new leaps like AI.  I enjoyed doing this for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.</p>
+      <p class="what-intro" data-i18n="track_record">Nearly three decades driving digital products and innovation, still endlessly fascinating by new leaps like AI. I enjoyed doing this for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.</p>
     </div>
   </section>
 
@@ -910,14 +905,11 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
     /* ─── I18N ─── */
     const T = {
       en: {
-        cta_nav:'Get in touch', nav_what:'What I do', nav_projects:'Projects', nav_exp:'Experience', nav_contact:'Contact',
-        headline:'Clarity is the cure.', subheadline:'From exploring to defining possible futures.',
-        intro:'When navigating from now to new to next, clarity is your compass.\nI help organizations turn fragmented ideas about innovation & transformation into a clear direction. Together, we align these visions to real processes across teams.',
-  what_1:'Lead innovation & transformation programs.',
-  what_2:'Create strategic clarity and translate to team deliverables.',
-  what_3:'Defining & delivering new products & services.',
-  what_4:'Driving & enabling change where old ways fail.',
+        cta_nav:"Let's talk", nav_what:'What I do', nav_projects:'Projects', nav_exp:'Experience',
+        headline:'From now to next.', subheadline:'Guiding change from boardroom to backlog.',
+        intro:'When navigating through change, clarity is your compass.\nI help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products & services.',
   nav_testimonials:'What people say',
+  cta_heading:"Let's talk", cta_schedule:'Schedule an introduction',
   exp_block1_title:'Product Leadership',
   exp_block1_1:'Define and drive product vision',
   exp_block1_2:'Translate strategy into execution',
@@ -943,21 +935,16 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
         exp4_role:'Head of Innovation, MT Member', exp4_desc:'Built SCHWUNG — the innovation engine for WPG Publishers — from scratch. Stage-gated funnel, funding model, 150+ idea pipeline, multiple launched products.',
         exp5_role:'Experience Design Lead', exp5_desc:'Led end-to-end UX for uGrow — a connected smart parenting platform. First medically certified platform in US & EU. CES Innovation Award, iF Design Award, Red Dot Award.',
         exp6_role:'Senior Digital Strategist', exp6_desc:'Digital strategy and product work for HP, Monster, and multiple digital agencies — product design, platform strategy and digital transformation programs.',
-        li_connect:'Connect', location_label:'Location', kvk_label:'KvK number', btw_label:'VAT number',
-        tag1:'Product', tag2:'Innovation', tag3:'Digitization', tag4:'Transformation', tag5:'Experience Design',
+        location_label:'Location', kvk_label:'KvK number', btw_label:'VAT number',
         outcome_label:'Outcome', role_label:'Role', year_label:'Year', status_label:'Status',
         read_more:'Read more',
       },
       nl: {
-        cta_nav:'Contact', nav_what:'Wat ik doe', nav_projects:'Voorbeelden', nav_exp:'Ervaring', nav_contact:'Contact',
+        cta_nav:'Contact', nav_what:'Wat ik doe', nav_projects:'Voorbeelden', nav_exp:'Ervaring',
         headline:'From now to next.', subheadline:'Guiding change from boardroom to backlog.',
         intro:'Veranderen van nu naar nieuw? Dan is helderheid je kompas.\n Ik help organisaties bij het scherpstellen van hun toekomstvisie. Samen lijnen we deze visie op met de dagelijkse processen en brengen we ze tot leven in waardevolle, mensgerichte producten en diensten.',
-  what_1:'Leiden van innovatie- en transformatieprogrammas.',
-  what_2:'Strategische helderheid creeren en vertalen naar team deliverables.',
-  what_3:'Nieuwe producten en diensten definieren en opleveren.',
-  what_4:'Verandering aanjagen waar oude manieren niet meer werken.',
-  
   nav_testimonials:'Wat mensen zeggen',
+  cta_heading:'Contact', cta_schedule:'Plan een kennismaking',
   exp_block1_title:'Product Leadership',
   exp_block1_1:'Productvisie ontwikkelen en uitvoering aansturen',
   exp_block1_2:'Strategie vertalen naar executie',
@@ -983,8 +970,7 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
         exp4_role:'Head of Innovation, MT-lid', exp4_desc:'Bouwde SCHWUNG — de innovatiemotor van WPG Uitgevers — van nul. Stage-gated funnel, financieringsmodel, 150+ ideeen-pipeline, meerdere gelanceerde producten.',
         exp5_role:'Experience Design Lead', exp5_desc:'Leidde end-to-end UX voor uGrow — een slim platform voor jonge ouders. Eerste medisch gecertificeerde platform in VS & EU. CES, iF en Red Dot award.',
         exp6_role:'Senior Digitaal Strateeg', exp6_desc:'Digitale strategie en productontwikkeling voor HP, Monster en meerdere digitale bureaus — productstrategie, platformstrategie en digitale transformatie.',
-        li_connect:'Verbinden', location_label:'Locatie', kvk_label:'KvK nummer', btw_label:'BTW nummer',
-        tag1:'Product', tag2:'Innovatie', tag3:'Digitalisering', tag4:'Transformatie', tag5:'Experience Design',
+        location_label:'Locatie', kvk_label:'KvK nummer', btw_label:'BTW nummer',
         outcome_label:'Resultaat', role_label:'Rol', year_label:'Jaar', status_label:'Status',
         read_more:'Lees meer',
       }
@@ -1059,7 +1045,7 @@ Nearly Three decades driving digital products and innovation, still endlessly fa
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    /* ���── TESTIMONIALS ─── */
+    /* ─── TESTIMONIALS ─── */
     const tTrack = document.getElementById('testimonialTrack');
     const tDots = document.querySelectorAll('.testimonial-dot');
     let cur = 0;
