@@ -200,6 +200,57 @@
     .what-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
     .what-list li { font-size: 1.2rem; font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 0.5rem; }
 
+    /* expertise cards */
+    .lm-expertise__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .lm-expertise__card {
+      background: #fff;
+      border: 0.5px solid rgba(10, 10, 12, 0.15);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      box-shadow: none;
+    }
+    .lm-expertise__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(10, 10, 12, 0.55);
+      margin: 0 0 1.25rem;
+    }
+    .lm-expertise__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .lm-expertise__list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #0a0a0c;
+    }
+    .lm-expertise__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #0a0a0c;
+    }
+    @media (max-width: 768px) {
+      .lm-expertise__grid { grid-template-columns: 1fr; }
+    }
+
     .track-record {
       margin-top: 0; font-size: 1.2rem; font-weight: 400;
       color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 900px;
@@ -540,12 +591,32 @@
   <section id="what">
     <div class="section" style="padding-top: 1.5rem;">
       <h2 class="section-heading" data-i18n="nav_what">What I do</h2>
-  <ul class="what-list">
-  <li data-i18n="what_1">Lead innovation & transformation programs.</li>
-  <li data-i18n="what_2">Create strategic clarity and translating this to team deliverables.</li>
-  <li data-i18n="what_3">Defining & delivering new products &amp; services.</li>
-  <li data-i18n="what_4">Driving & enabling change where old ways fail.</li>
-  </ul>
+      <div class="lm-expertise__grid">
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Product Leadership</p>
+          <ul class="lm-expertise__list">
+            <li>Productvisie ontwikkelen en uitvoering aansturen</li>
+            <li>Strategie vertalen naar executie</li>
+            <li>Product management- en UX-teams aansturen</li>
+          </ul>
+        </div>
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Innovation &amp; Ventures</p>
+          <ul class="lm-expertise__list">
+            <li>Innovatiekracht ontwikkelen</li>
+            <li>AI use cases defini&euml;ren en uitrollen</li>
+            <li>Nieuwe businessmodellen en proposities defini&euml;ren</li>
+          </ul>
+        </div>
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Digital Strategy &amp; Transformation</p>
+          <ul class="lm-expertise__list">
+            <li>Digitale visie ontwikkelen en verankeren</li>
+            <li>Regie voeren over digitale projectportfolio</li>
+            <li>Brug slaan tussen business en IT</li>
+          </ul>
+        </div>
+      </div>
       <p class="what-intro" data-i18n="track_record">Nearly Three decades driving digital products and innovation, still  endlessly fascinating by new leaps like AI.  I enjoyed doing this for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.</p>
     </div>
   </section>
