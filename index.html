@@ -8,7 +8,7 @@
   
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Clarity is the cure." />
-  <meta property="og:description" content="Strategic innovation & digital transformation. Helping organizations navigate from now to new to next." />
+  <meta property="og:description" content="Strategic innovation & digital transformation. Helping organizations navigate from now to next." />
   <meta property="og:image" content="https://laurensmassee.com/og-image-v2.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="627" />
@@ -200,6 +200,57 @@
     .what-list { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
     .what-list li { font-size: 1.2rem; font-weight: 400; line-height: 1.6; color: rgba(255,255,255,0.75); margin-bottom: 0.5rem; }
 
+    /* expertise cards */
+    .lm-expertise__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .lm-expertise__card {
+      background: #fff;
+      border: 0.5px solid rgba(10, 10, 12, 0.15);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      box-shadow: none;
+    }
+    .lm-expertise__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(10, 10, 12, 0.55);
+      margin: 0 0 1.25rem;
+    }
+    .lm-expertise__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .lm-expertise__list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #0a0a0c;
+    }
+    .lm-expertise__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #0a0a0c;
+    }
+    @media (max-width: 768px) {
+      .lm-expertise__grid { grid-template-columns: 1fr; }
+    }
+
     .track-record {
       margin-top: 0; font-size: 1.2rem; font-weight: 400;
       color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 900px;
@@ -322,41 +373,29 @@
       margin-bottom: 2.5rem;
     }
     .cta-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 900px;
+      display: flex;
     }
-    .cta-option {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .cta-option:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.3);
-      transform: translateY(-4px);
-    }
-    .cta-illustration {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1rem;
-      opacity: 0.7;
-    }
-    .cta-option-title {
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      color: #0a0a0c;
+      border-radius: 12px;
+      padding: 1rem 1.75rem;
       font-size: 1rem;
       font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.5rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
     }
-    .cta-option-desc {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.5;
+    .cta-button:hover {
+      background: rgba(255,255,255,0.85);
+      transform: translateY(-3px);
+    }
+    .cta-button-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
     }
 
     /* ─── FOOTER ─── */
@@ -486,9 +525,6 @@
 
       .exp-item { grid-template-columns: 1fr; gap: 0.3rem; padding-left: 1.5rem; }
 
-      .cta-grid { grid-template-columns: 1fr; max-width: 100%; }
-      .cta-option { padding: 1.5rem 1.25rem; }
-
       .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
     }
 
@@ -543,24 +579,44 @@
     </div>
     <div class="hero-spacer"></div>
     <div class="hero-content">
-      <h1 class="headline" data-i18n="headline">Clarity is the cure.</h1>
+      <h1 class="headline" data-i18n="headline">From now to next.</h1>
       <div class="headline-divider"></div>
-      <p class="subheadline" data-i18n="subheadline">From exploring to defining and delivering innovations.</p>
+      <p class="subheadline" data-i18n="subheadline">Guiding change from boardroom to backlog.</p>
     </div>
     <div class="hero-mid-spacer"></div>
-    <p class="hero-intro" data-i18n="intro">When navigating from now to new to next, clarity is your compass.<br>I help organizations turn fragmented ideas about innovation &amp; transformation into a clear direction. Together, we align these visions to real processes and bring them to life.</p>
+    <p class="hero-intro" data-i18n="intro">When navigating through change, clarity is your compass.<br>I help organizations articulate clear future visions. Together, we align these visions to real processes and bring them to life in value driven, human-centric products &amp services.</p>
   </section>
 
   <!-- WHAT I DO -->
   <section id="what">
     <div class="section" style="padding-top: 1.5rem;">
       <h2 class="section-heading" data-i18n="nav_what">What I do</h2>
-  <ul class="what-list">
-  <li data-i18n="what_1">Lead innovation & transformation programs.</li>
-  <li data-i18n="what_2">Create strategic clarity and translating this to team deliverables.</li>
-  <li data-i18n="what_3">Defining & delivering new products &amp; services.</li>
-  <li data-i18n="what_4">Driving & enabling change where old ways fail.</li>
-  </ul>
+      <div class="lm-expertise__grid">
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Product Leadership</p>
+          <ul class="lm-expertise__list">
+            <li>Productvisie ontwikkelen en uitvoering aansturen</li>
+            <li>Strategie vertalen naar executie</li>
+            <li>Product management- en UX-teams aansturen</li>
+          </ul>
+        </div>
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Innovation &amp; Ventures</p>
+          <ul class="lm-expertise__list">
+            <li>Innovatiekracht ontwikkelen</li>
+            <li>AI use cases defini&euml;ren en uitrollen</li>
+            <li>Nieuwe businessmodellen en proposities defini&euml;ren</li>
+          </ul>
+        </div>
+        <div class="lm-expertise__card">
+          <p class="lm-expertise__label">Digital Strategy &amp; Transformation</p>
+          <ul class="lm-expertise__list">
+            <li>Digitale visie ontwikkelen en verankeren</li>
+            <li>Regie voeren over digitale projectportfolio</li>
+            <li>Brug slaan tussen business en IT</li>
+          </ul>
+        </div>
+      </div>
       <p class="what-intro" data-i18n="track_record">Nearly Three decades driving digital products and innovation, still  endlessly fascinating by new leaps like AI.  I enjoyed doing this for companies including Philips, Rabobank, NN Group, Schiphol Airport, Monster and HP.</p>
     </div>
   </section>
@@ -772,20 +828,9 @@
   <section id="contact" class="cta-section">
     <h2 class="section-heading" data-i18n="cta_heading">Let's talk</h2>
     <div class="cta-grid">
-      <a href="https://calendly.com/laurensmassee" target="_blank" class="cta-option">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='50' cy='30' r='15'/%3E%3Cpath d='M25 85c0-20 10-30 25-30s25 10 25 30'/%3E%3Cpath d='M70 40l15 15M85 40l-15 15'/%3E%3C/svg%3E" alt="" class="cta-illustration">
-        <h3 class="cta-option-title" data-i18n="cta_meet">Meet me online</h3>
-        <p class="cta-option-desc" data-i18n="cta_meet_desc">Schedule a video call</p>
-      </a>
-      <a href="mailto:hello@laurensmassee.com?subject=Coffee%20meeting" class="cta-option">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M20 70h45v-35h-45z'/%3E%3Cpath d='M65 50h15c5 0 10 5 10 10s-5 10-10 10h-15'/%3E%3Cpath d='M30 35c0-8 5-15 12-15s12 7 12 15'/%3E%3Cpath d='M35 30c3-5 7-5 10 0'/%3E%3C/svg%3E" alt="" class="cta-illustration">
-        <h3 class="cta-option-title" data-i18n="cta_coffee">Have a coffee</h3>
-        <p class="cta-option-desc" data-i18n="cta_coffee_desc">Meet in Amsterdam area</p>
-      </a>
-      <a href="mailto:hello@laurensmassee.com?subject=Challenge" class="cta-option">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-width='2'%3E%3Crect x='15' y='25' width='50' height='60' rx='3'/%3E%3Cpath d='M25 40h30M25 52h30M25 64h20'/%3E%3Cpath d='M65 35l20 20-20 20'/%3E%3C/svg%3E" alt="" class="cta-illustration">
-        <h3 class="cta-option-title" data-i18n="cta_challenge">Share your challenge</h3>
-        <p class="cta-option-desc" data-i18n="cta_challenge_desc">Send me a brief</p>
+      <a href="https://calendly.com/laurens-laurensmassee" target="_blank" class="cta-button">
+        <svg class="cta-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="cta_schedule">Schedule an introduction</span>
       </a>
     </div>
   </section>
@@ -874,8 +919,8 @@
       },
       nl: {
         cta_nav:'Contact', nav_what:'Wat ik doe', nav_projects:'Voorbeelden', nav_exp:'Ervaring', nav_contact:'Contact',
-        headline:'Clarity is the cure.', subheadline:'Van losse ideeën naar een scherpe koers.',
-        intro:'Veranderen van nu naar nieuw? Dan is helderheid je kompas.\nIk help organisaties om losse ideeën over innovatie en transformatie om te zetten in één duidelijke richting. Zo krijgen alle teams de neuzen dezelfde kant op.',
+        headline:'From now to next.', subheadline:'Guiding change from boardroom to backlog.',
+        intro:'Veranderen van nu naar nieuw? Dan is helderheid je kompas.\n Ik help organisaties bij het scherpstellen van hun toekomstvisie. Samen lijnen we deze visie op met de dagelijkse processen en brengen we ze tot leven in waardevolle, mensgerichte producten en diensten.',
   what_1:'Leiden van innovatie- en transformatieprogrammas.',
   what_2:'Strategische helderheid creeren en vertalen naar team deliverables.',
   what_3:'Nieuwe producten en diensten definieren en opleveren.',
