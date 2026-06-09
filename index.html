@@ -1009,6 +1009,7 @@ Over two decades driving digital products and innovation, still endlessly fascin
         b.classList.toggle('active', b.getAttribute('data-lang') === l);
       });
       document.documentElement.lang = l;
+      if (typeof openCase !== 'undefined' && openCase) renderModal();
     }
 
     document.getElementById('langToggle').addEventListener('click', e => {
@@ -1023,38 +1024,69 @@ Over two decades driving digital products and innovation, still endlessly fascin
 
     /* ─── MODAL ─── */
     const cases = {
-      1:{logo:'logos/philips-avent.jpg',title:'uGrow',client:'Philips Avent',body:'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design spanning discovery, design and delivery phases, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve.',outcome:'First medically certified smart parenting platform in the US and EU. CES Innovation Award, iF Design Award, Red Dot Award.',role:'Experience design lead',year:'2015 – 2017',status:'Shipped'},
-      2:{logo:'logos/schiphol.png',title:'AirportOS',client:'Amsterdam Airport Schiphol',body:'Schiphol challenged by capacity limits. With two departments running forecasts and planning in parallel without shared direction, I shaped many viewpoints into a cohesive vision for a new Airport Capacity Planning & Control department, then iterated it into a roadmap, annual plans and the AirportOS tech vision.',outcome:'Shared vision, capabilities framework and transformation roadmap handed over. Multi-year programme governance in place.',role:'Strategic Change Manager',year:'2024 – 2026',status:'Blueprint 2030, Operating Model, Roadmap'},
-      3:{logo:'logos/nn-group.jpg',title:'NN International',client:'NN Group',body:"NN International had deep customer trust in health and finance and needed to grow beyond core insurance. Within NN Group's corporate venture structure, I led multidisciplinary teams through the full early-stage innovation cycle — identifying needs, framing propositions, prototyping and testing in the eHealth domain.",outcome:'Multiple eHealth propositions developed and trialed.',role:'Innovation lead',year:'2021 – 2022',status:'Ventured'},
-      4:{logo:'logos/schwung.png',title:'SCHWUNG',client:'WPG Publishers',body:'Built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model. A 150+ ideas pipeline ran through the funnel over three years. Products that launched: Coachfinder, Spiek!, ThrillerAbo, Kinderboeken.nl and others.',outcome:'Multiple products launched and generating revenue. New ways of working embedded across the organisation.',role:'Head of Innovation, MT member',year:'2017 – 2020',status:'Innovation embedded in business units'},
-      5:{logo:'logos/your.png',title:'YouR',client:'Fintech client — via Macaw',body:"A large financial service provider with 50,000 employees had no coherent digital workplace and wanted to level up their employee engagement. I led concept development of various directions, validated with employees and stakeholders, then originated YouR: a personalized, AI-assisted omni-present layer replacing the fragmented tool landscape.",outcome:'Strategic blueprint handed over for implementation.',role:'Digital strategist & design lead',year:'2023 – 2024',status:'Blueprint being further detailed'},
-      6:{logo:'logos/rize.png',title:'RIZE',client:'WPG Publishers',body:"WPG's most trusted magazine brands were losing subscribers. Strategic insight: publishers own the most valuable content but can no longer monetise it directly — flip the model, use content as marketing and sell memberships in the wellbeing space.",outcome:'Board decided RIZE was too risky. Magazine business sold within a year. Parts of the concept implemented otherwise.',role:'Head of Innovation, MT member',year:'2017 – 2020',status:'New owner'},
+      1:{logo:'logos/philips-avent.jpg',title:'uGrow',client:'Philips Avent',year:'2015 – 2017',
+        body:{en:'Philips Avent made analog baby products with no digital proposition and no relationship with parents beyond the sale. I led experience design spanning discovery, design and delivery phases, shaping the product vision and end-to-end UX for a connected parenting platform — app, baby monitor, smart thermometer, bottle sleeve.',nl:'Philips Avent maakte analoge babyproducten zonder digitale propositie en zonder relatie met ouders na de aankoop. Ik leidde experience design door de discovery-, ontwerp- en deliveryfases en gaf vorm aan de productvisie en end-to-end UX voor een connected platform voor ouders — app, babyfoon, slimme thermometer, fleshoes.'},
+        outcome:{en:'First medically certified smart parenting platform in the US and EU. CES Innovation Award, iF Design Award, Red Dot Award.',nl:'Eerste medisch gecertificeerde smart parenting platform in de VS en EU. CES Innovation Award, iF Design Award, Red Dot Award.'},
+        role:{en:'Experience design lead',nl:'Experience design lead'},
+        status:{en:'Shipped',nl:'Gelanceerd'}},
+      2:{logo:'logos/schiphol.png',title:'AirportOS',client:'Amsterdam Airport Schiphol',year:'2024 – 2026',
+        body:{en:'Schiphol challenged by capacity limits. With two departments running forecasts and planning in parallel without shared direction, I shaped many viewpoints into a cohesive vision for a new Airport Capacity Planning & Control department, then iterated it into a roadmap, annual plans and the AirportOS tech vision.',nl:'Schiphol loopt tegen capaciteitsgrenzen aan. Met twee afdelingen die parallel forecasts en planning maakten zonder gedeelde richting, bracht ik veel verschillende invalshoeken samen tot één visie voor een nieuwe afdeling Airport Capacity Planning & Control, en werkte dit uit tot een roadmap, jaarplannen en de AirportOS tech-visie.'},
+        outcome:{en:'Shared vision, capabilities framework and transformation roadmap handed over. Multi-year programme governance in place.',nl:'Gedeelde visie, capabilities-framework en transformatie-roadmap overgedragen. Meerjarige programmagovernance ingericht.'},
+        role:{en:'Strategic Change Manager',nl:'Strategic Change Manager'},
+        status:{en:'Blueprint 2030, Operating Model, Roadmap',nl:'Blueprint 2030, operating model, roadmap'}},
+      3:{logo:'logos/nn-group.jpg',title:'NN International',client:'NN Group',year:'2021 – 2022',
+        body:{en:"NN International had deep customer trust in health and finance and needed to grow beyond core insurance. Within NN Group's corporate venture structure, I led multidisciplinary teams through the full early-stage innovation cycle — identifying needs, framing propositions, prototyping and testing in the eHealth domain.",nl:'NN International had diep klantvertrouwen in gezondheid en financiën en moest groeien voorbij de kernverzekeringen. Binnen de corporate venture-structuur van NN Group leidde ik multidisciplinaire teams door de volledige early-stage innovatiecyclus — behoeftes identificeren, proposities vormgeven, prototypen en testen in het eHealth-domein.'},
+        outcome:{en:'Multiple eHealth propositions developed and trialed.',nl:'Meerdere eHealth-proposities ontwikkeld en getest.'},
+        role:{en:'Innovation lead',nl:'Innovation lead'},
+        status:{en:'Ventured',nl:'Ventured'}},
+      4:{logo:'logos/schwung.png',title:'SCHWUNG',client:'WPG Publishers',year:'2017 – 2020',
+        body:{en:'Built SCHWUNG from scratch: a stage-gated innovation funnel with its own validation methodology and funding model. A 150+ ideas pipeline ran through the funnel over three years. Products that launched: Coachfinder, Spiek!, ThrillerAbo, Kinderboeken.nl and others.',nl:'Bouwde SCHWUNG vanaf nul: een stage-gated innovatiefunnel met een eigen validatiemethodiek en financieringsmodel. In drie jaar liep een pipeline van 150+ ideeën door de funnel. Gelanceerde producten: Coachfinder, Spiek!, ThrillerAbo, Kinderboeken.nl en meer.'},
+        outcome:{en:'Multiple products launched and generating revenue. New ways of working embedded across the organisation.',nl:'Meerdere producten gelanceerd en omzetgenererend. Nieuwe manieren van werken verankerd in de organisatie.'},
+        role:{en:'Head of Innovation, MT member',nl:'Head of Innovation, MT-lid'},
+        status:{en:'Innovation embedded in business units',nl:'Innovatie verankerd in business units'}},
+      5:{logo:'logos/your.png',title:'YouR',client:'Fintech client — via Macaw',year:'2023 – 2024',
+        body:{en:"A large financial service provider with 50,000 employees had no coherent digital workplace and wanted to level up their employee engagement. I led concept development of various directions, validated with employees and stakeholders, then originated YouR: a personalized, AI-assisted omni-present layer replacing the fragmented tool landscape.",nl:'Een grote financiële dienstverlener met 50.000 medewerkers had geen coherente digitale werkplek en wilde de employee betrokkenheid naar een hoger niveau tillen. Ik leidde de conceptontwikkeling van verschillende richtingen, valideerde met medewerkers en stakeholders, en bedacht YouR: een gepersonaliseerde, AI-gestuurde alomtegenwoordige laag die het versnipperde tool-landschap vervangt.'},
+        outcome:{en:'Strategic blueprint handed over for implementation.',nl:'Strategische blueprint overgedragen voor implementatie.'},
+        role:{en:'Digital strategist & design lead',nl:'Digitaal strateeg & design lead'},
+        status:{en:'Blueprint being further detailed',nl:'Blueprint wordt verder uitgewerkt'}},
+      6:{logo:'logos/rize.png',title:'RIZE',client:'WPG Publishers',year:'2017 – 2020',
+        body:{en:"WPG's most trusted magazine brands were losing subscribers. Strategic insight: publishers own the most valuable content but can no longer monetise it directly — flip the model, use content as marketing and sell memberships in the wellbeing space.",nl:'De meest vertrouwde tijdschriftmerken van WPG verloren abonnees. Strategisch inzicht: uitgevers bezitten de meest waardevolle content maar kunnen die niet langer direct te gelde maken — draai het model om, gebruik content als marketing en verkoop lidmaatschappen in het wellbeing-domein.'},
+        outcome:{en:'Board decided RIZE was too risky. Magazine business sold within a year. Parts of the concept implemented otherwise.',nl:'De directie vond RIZE te risicovol. Het tijdschriftbedrijf werd binnen een jaar verkocht. Delen van het concept zijn elders gerealiseerd.'},
+        role:{en:'Head of Innovation, MT member',nl:'Head of Innovation, MT-lid'},
+        status:{en:'New owner',nl:'Nieuwe eigenaar'}},
     };
 
     const modal = document.getElementById('modalOverlay');
+    let openCase = null;
+
+    function renderModal() {
+      const d = openCase; if (!d) return;
+      const t = T[lang];
+      document.getElementById('modalLogo').src = d.logo;
+      document.getElementById('modalTitle').textContent = d.title;
+      document.getElementById('modalClient').textContent = d.client;
+      document.getElementById('modalBody').textContent = d.body[lang];
+      document.getElementById('modalOutcome').textContent = d.outcome[lang];
+      document.getElementById('modalRole').textContent = d.role[lang];
+      document.getElementById('modalYear').textContent = d.year;
+      document.getElementById('modalStatus').textContent = d.status[lang];
+      document.getElementById('outcomeLabel').textContent = t.outcome_label;
+      document.getElementById('roleLabel').textContent = t.role_label;
+      document.getElementById('yearLabel').textContent = t.year_label;
+      document.getElementById('statusLabel').textContent = t.status_label;
+    }
 
     document.querySelectorAll('.project-card').forEach((card,i) => {
       card.addEventListener('click', () => {
         const d = cases[i+1]; if (!d) return;
-        const t = T[lang];
-        document.getElementById('modalLogo').src = d.logo;
-        document.getElementById('modalTitle').textContent = d.title;
-        document.getElementById('modalClient').textContent = d.client;
-        document.getElementById('modalBody').textContent = d.body;
-        document.getElementById('modalOutcome').textContent = d.outcome;
-        document.getElementById('modalRole').textContent = d.role;
-        document.getElementById('modalYear').textContent = d.year;
-        document.getElementById('modalStatus').textContent = d.status;
-        document.getElementById('outcomeLabel').textContent = t.outcome_label;
-        document.getElementById('roleLabel').textContent = t.role_label;
-        document.getElementById('yearLabel').textContent = t.year_label;
-        document.getElementById('statusLabel').textContent = t.status_label;
+        openCase = d;
+        renderModal();
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
     });
 
-    function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+    function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; openCase = null; }
     document.getElementById('modalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
