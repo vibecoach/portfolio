@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "laurensmassee.com" }],
+      "destination": "https://www.laurensmassee.com/$1",
+      "permanent": true
+    }
+  ]
+}
